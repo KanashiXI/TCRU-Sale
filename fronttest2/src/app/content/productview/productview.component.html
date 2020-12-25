@@ -1,0 +1,95 @@
+<body class="inbd">
+    <!-- <div class="big-title">
+      <p-tabMenu [model]="items"></p-tabMenu>
+    </div>
+    แสดงสินค้า
+    <br><br> -->
+    <div class="p-grid">
+      <div class="p-col-12 p-md-4 p-lg-4 p-offset-8">
+        <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="ค้นหาสินค้า">   
+            <button type="button" pButton pRipple label="ค้นหา"></button>      
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="p-grid">
+        <div class="p-col-12">
+          <div class="card">
+            <p-tabView [(activeIndex)]="activeIndex" styleClass="center">
+                <p-tabPanel header="สินค้าทั้งหมด">
+                  <div class="p-grid">
+                    <div class="p-col-1"></div>
+                    <div class="p-col-12 p-md-2 p-lg-2">
+                      <p-card>
+                        <p-header class="ui-card-title">
+                            <img alt="Card" src="../../../assets/FreshTricoderma.jpg">
+                        </p-header>
+                        <p style="text-align: left;"><strong>เชื้อราไตรโคเดอมาชนิดสด</strong></p>
+                        <p style="text-align: right;">100$</p>
+
+
+                        <ul>
+                          <li *ngFor="let item of productList; let i = index">
+                              {{item.product_name}}
+                          </li>
+                        </ul>
+
+                        
+                      </p-card>
+                    </div>
+                  </div>
+                </p-tabPanel>
+                <p-tabPanel header="เชื้อราบิวเวอร์เรีย">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                        architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                </p-tabPanel>
+                <p-tabPanel header="เชื้อราเมธาไรเซียม">
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+                </p-tabPanel>
+                <p-tabPanel header="เชื้อราไตรโคเดอร์มา">
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+                </p-tabPanel>
+                <p-tabPanel header="สินค้าอื่นๆ">
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                      cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+              </p-tabPanel>
+            </p-tabView>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+
+
+<!-- <ul>
+    <li *ngFor="let item of productList; let i = index">
+        {{item.product_name}}
+    </li>
+</ul> -->
+<br>
+
+
+<!-- <body class="inbd">
+    <div class="grid-container">
+        <mat-grid-list cols="6" rowHeight="250px">
+            <mat-grid-tile *ngFor="let card of productList" [colspan]="card.cols" [rowspan]="card.rows">
+                <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{card.product_name}}
+                        </mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</body> -->

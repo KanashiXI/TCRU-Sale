@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">
+        <img src="../../../assets/primeng.png" height="45" style="margin-left: 10px;">
+        TCRU
+    </a>
+    <!-- <p-menubar [model]="items" styleClass="menu"></p-menubar> -->
+
+    <a class="navbar-brand menu" routerLink="productinfo">ผลิตภัณฑ์</a>
+    <a class="navbar-brand menu" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+    <a class="navbar-brand menu" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+    <a class="navbar-brand menu" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
+    <a class="navbar-brand menu" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+    <a class="navbar-brand menu" href="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+
+
+
+    <!-- <p-megaMenu [model]="megaItems" styleClass="menu"> <button pButton label="Logout" icon="pi pi-power-off" class=""></button></p-megaMenu> -->
+</nav>

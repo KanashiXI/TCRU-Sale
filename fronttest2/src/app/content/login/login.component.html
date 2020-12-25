@@ -1,0 +1,61 @@
+<form #loginForm=ngForm (ngSubmit)="onSubmit()">
+    <!-- <form [formGroup]=reactiveForm> -->
+
+    <body class="indb" style="padding-top: 4rem;">
+        <br>
+        <h2 style="text-align: center;">เข้าสู่ระบบ</h2>
+        <hr style="width: 50%;">
+        <div class="p-grid">
+            <div class="p-col-12 p-md-4 p-lg-4">
+                <img src="../../../assets/tcru-image.jpg" class="p-d-block p-mx-auto logo-login">
+            </div>
+            <div class="p-col-1 p-md-1 p-lg-1"></div>
+            <div class="p-col-12 p-md-5 p-lg-5">
+                <div class="p-fluid p-grid">
+                    <div class="p-col-10 form-group border-filed p-input-filled p-field">
+                        <label>ชื่อผู้ใช้</label>
+                        <input type="email" name="email" class="form-control w-100" id="inputEmail3" placeholder="Email"
+                            [(ngModel)]="form.email" required>
+                        <div class="text-danger" *ngIf="form.email.invalid && (form.email.dirty || form.email.touched)">
+                            โปรด email ให้ถูกต้อง
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-10 form-group border-filed p-input-filled">
+                        <label>รหัสผ่าน</label>
+                        <input type="password" name="password" class="form-control" id="inputPassword3"
+                            placeholder="Password" [(ngModel)]="form.password" required>
+                    </div>
+                </div>
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-col-12 p-md-6 p-lg-6 p-offset-8">
+                        <small routerLink="/login/resetpassword">ลืมรหัสผ่าน</small>
+                    </div>
+
+                </div>
+                <br>
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-6 p-lg-6 form-group">
+                        <button type="submit" pButton label="เข้าสู่ระบบ" routerLink="/login" class="p-button-raised"
+                            [disabled]="!loginForm.valid">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</form>
+
+
+
+
+<!-- <div class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+    <div *ngIf="username.errors.pattern">
+        ชื่อผู้ใช้ประกอบไปด้วยa-z พิมพ์เล็กหรือพิมพ์ใหญ่
+    </div>
+    <div *ngIf="username.errors['required']">โปรดกรอกอีเมล</div>
+</div> -->
