@@ -1,16 +1,18 @@
-import { ProductInfoComponent } from './content/productInfo/productInfo.component';
-import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
-import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
-import { ShopComponent } from './content/shop/shop.component';
+import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
+import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
+import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
+import { ResetPasswordComponent } from './content/auth/resetPassword/resetPassword.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './content/login/login.component';
-import { RegisterComponent } from './content/register/register.component';
-import { ProfileComponent } from './content/profile/profile.component';
-import { SigninComponent } from './content/signin/signin.component';
+import { LoginComponent } from './content/auth/login/login.component';
+import { RegisterComponent } from './content/auth/register/register.component';
+import { ProfileComponent } from './content/user/profile/profile.component';
+import { SigninComponent } from './content/auth/signin/signin.component';
 import { BeforeLoginService } from './shared/service/before-login.service';
 import { AfterLoginService } from './shared/service/after-login.service';
-import { ProductviewComponent } from './content/productview/productview.component';
+import { ProductviewComponent } from './content/shop/productview/productview.component';
+
 
 
 const routes: Routes = [
@@ -54,6 +56,10 @@ const routes: Routes = [
   //   path: 'product',
   //   component: ProductviewComponent,
   // },
+  {
+    path: 'productinfo/productdetail',
+    component: ProductDetailComponent,
+  }, 
 
 ];
 

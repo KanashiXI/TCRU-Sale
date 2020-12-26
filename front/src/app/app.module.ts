@@ -1,14 +1,14 @@
-import { ProductInfoComponent } from './content/productInfo/productInfo.component';
-import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
-import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
-import { LoginComponent } from './content/login/login.component';
-import { ShopComponent } from './content/shop/shop.component';
+import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
+import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
+import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
+import { ResetPasswordComponent } from './content/auth/resetPassword/resetPassword.component';
+import { LoginComponent } from './content/auth/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
-import { RegisterComponent } from './content/register/register.component';
+import { RegisterComponent } from './content/auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowempComponent } from './content/showemp/showemp.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
-import { ProductviewComponent } from './content/productview/productview.component';
+import { ProductviewComponent } from './content/shop/productview/productview.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesModule } from 'primeng/messages';
@@ -32,9 +32,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
 import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
-import { ProfileComponent } from './content/profile/profile.component';
-import { SigninComponent } from './content/signin/signin.component';
-// import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { ProfileComponent } from './content/user/profile/profile.component';
+import { SigninComponent } from './content/auth/signin/signin.component';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { DialogModule } from 'primeng/dialog';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { CardModule } from 'primeng/card';
@@ -62,13 +62,13 @@ import {FieldsetModule} from 'primeng/fieldset';
     UniqueEmailValidatorDirective,
     MenubarComponent,
     FooterComponent,
-    ShopComponent,
     ProfileComponent,
     LoginComponent,
     SigninComponent,
     ResetPasswordComponent,
     PleaseCheckMailComponent,
     ProductInfoComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +100,7 @@ import {FieldsetModule} from 'primeng/fieldset';
     TabViewModule,
     DropdownModule,
     FieldsetModule,
-
+    BreadcrumbModule,
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },

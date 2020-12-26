@@ -4,7 +4,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { compareValidator } from 'src/app/shared/service/compare-validator.directive';
 // import { resolve } from 'dns';
-import { uniqueEmailValidator } from './../../shared/service/unique-email-validator.directive';
+import { uniqueEmailValidator } from './../../../shared/service/unique-email-validator.directive';
 import { uniqueUsernameValidator } from 'src/app/shared/service/unique-username-validator.directive';
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
