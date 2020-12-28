@@ -12,7 +12,7 @@ import { TokenService } from './shared/token.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'fronttest2';
+  title = 'ศูนย์ผลิตและบริการชีวินทรีย์เกษตร มหาวิทยาลัยวลัยลักษณ์';
 
   isSignedIn: boolean;
   constructor(

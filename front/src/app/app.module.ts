@@ -27,10 +27,10 @@ import { UniqueUsernameValidatorDirective } from './shared/service/unique-userna
 import { CommonModule } from '@angular/common';
 import { CompareValidatorDirective } from './shared/service/compare-validator.directive';
 import { UniqueEmailValidatorDirective } from './shared/service/unique-email-validator.directive';
-import { MenubarComponent } from './content/menubar/menubar.component';
+import { MenubarComponent } from './content/decorate/menubar/menubar.component';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
-import { FooterComponent } from './content/footer/footer.component';
+import { FooterComponent } from './content/decorate/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/user/profile/profile.component';
 import { SigninComponent } from './content/auth/signin/signin.component';
