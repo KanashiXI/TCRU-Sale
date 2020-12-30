@@ -48,6 +48,8 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {TabViewModule} from 'primeng/tabview';
 import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
+import { ShippingComponent } from './content/dealing/shipping/shipping.component';
+import { CouponComponent } from './content/dealing/discount/coupon/coupon.component';
 
 
 @NgModule({
@@ -69,6 +71,8 @@ import {FieldsetModule} from 'primeng/fieldset';
     PleaseCheckMailComponent,
     ProductInfoComponent,
     ProductDetailComponent,
+    ShippingComponent,
+    CouponComponent,
   ],
   imports: [
     BrowserModule,
