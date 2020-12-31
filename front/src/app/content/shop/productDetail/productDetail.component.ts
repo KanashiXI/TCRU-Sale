@@ -15,7 +15,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     this.items = [
       {label:'สินค้าทั้งหมด', url:'/'},
-      {label:'Sports'},
+      {label:'สินค้า...'},
    
     ];
   }

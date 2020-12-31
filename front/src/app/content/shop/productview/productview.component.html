@@ -16,22 +16,23 @@
                   <div class="p-grid">
                     <div class="p-col-1"></div>
                     <div class="p-col-12 p-md-2 p-lg-2">
-                      <p-card routerLink="productview/productdetail">
-                        <p-header class="ui-card-title">
-                            <img alt="Card" src="../../../assets/FreshTricoderma.jpg">
-                        </p-header>
-                        <p style="text-align: left;"><strong>เชื้อราไตรโคเดอมาชนิดสด</strong></p>
-                        <p style="text-align: right;">100$</p>
+                      <div class="p-shadow-6">
+                        <p-card routerLink="productview/productdetail">
+                          <p-header class="ui-card-title">
+                              <img alt="Card" src="../../../assets/FreshTricoderma.jpg">
+                          </p-header>
+                          <p style="text-align: left;"><strong>เชื้อราไตรโคเดอมาชนิดสด</strong></p>
+                          <label><small>ขนาด:   </small></label> <label style="text-align: right;"><small>100$</small></label>
+                          <p style="text-align: left;"> </p>
 
 
-                        <ul>
-                          <li *ngFor="let item of productList; let i = index">
-                              {{item.product_name}}
-                          </li>
-                        </ul>
-
-                        
-                      </p-card>
+                          <ul>
+                            <li *ngFor="let item of productList; let i = index">
+                                {{item.product_name}}
+                            </li>
+                          </ul>
+                        </p-card>
+                      </div>
                     </div>
                   </div>
                 </p-tabPanel>
