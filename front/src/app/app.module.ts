@@ -1,3 +1,5 @@
+import { AddReduceComponent } from './content/shop/productDetail/addReduce/addReduce.component';
+import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
 import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
@@ -73,6 +75,8 @@ import { CouponComponent } from './content/dealing/discount/coupon/coupon.compon
     ProductDetailComponent,
     ShippingComponent,
     CouponComponent,
+    CartComponent,
+    AddReduceComponent,
   ],
   imports: [
     BrowserModule,
