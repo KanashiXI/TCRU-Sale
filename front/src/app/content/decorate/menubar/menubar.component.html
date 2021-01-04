@@ -38,25 +38,25 @@
     
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-            <a class="navbar-brand list" routerLink="/"><i class="pi pi-shopping-cart" style="font-size: 1.25rem"></i></a>
+            <a class="navbar-brand list" routerLink="cart"><i class="pi pi-shopping-cart" style="font-size: 1.25rem"></i></a>
         </li> 
         <li class="nav-item active">
-            <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+            <a class="navbar-brand list" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
         </li>
         <li class="nav-item">
-            <a class="navbar-brand" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+            <a class="navbar-brand list" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
         </li>
         <!-- <li class="nav-item">
-            <a class="navbar-brand" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
+            <a class="navbar-brand list" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
         </li> -->
         <li class="nav-item">
-            <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+            <a class="navbar-brand list" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
         </li>
         <li class="nav-item">
-            <a class="navbar-brand" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+            <a class="navbar-brand list" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
         </li>
         <li class="nav-item">
-            <a class="navbar-brand" routerLink="#"  *ngIf="loggedIn"><i class="pi-shopping-cart"></i></a>
+            <a class="navbar-brand list" routerLink="cart"  *ngIf="loggedIn"><i class="pi-shopping-cart"></i></a>
         </li>
       </ul>
     
