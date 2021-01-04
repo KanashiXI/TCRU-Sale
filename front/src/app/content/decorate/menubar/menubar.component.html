@@ -1,18 +1,59 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">
+        <img src="../../../assets/primeng.png" height="45" style="margin-left: 10px;">
+        TCRU
+    </a> -->
+    <!-- <p-menubar [model]="items" styleClass="menu"></p-menubar> -->
+<!-- 
+    <a class="navbar-brand menu" routerLink="productinfo">ผลิตภัณฑ์</a>
+    <a class="navbar-brand menu" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+    <a class="navbar-brand menu" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+    <a class="navbar-brand menu" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
+    
+    <div class="">
+
+    </div>
+
+    <a class="navbar-brand menu" style="text-align: right;" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+    <a class="navbar-brand menu" href="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+
+</nav> -->
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" routerLink="/">
         <img src="../../../assets/primeng.png" height="45" style="margin-left: 10px;">
         TCRU
     </a>
-    <!-- <p-menubar [model]="items" styleClass="menu"></p-menubar> -->
-
-    <a class="navbar-brand menu" routerLink="productinfo">ผลิตภัณฑ์</a>
-    <a class="navbar-brand menu" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
-    <a class="navbar-brand menu" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
-    <a class="navbar-brand menu" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
-    <a class="navbar-brand menu" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
-    <a class="navbar-brand menu" href="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+    <a class="navbar-brand list" routerLink="productinfo">ผลิตภัณฑ์</a>
+    <a class="navbar-brand list" routerLink="/"><i class="bi bi-cart"></i></a>
+    
 
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- <p-megaMenu [model]="megaItems" styleClass="menu"> <button pButton label="Logout" icon="pi pi-power-off" class=""></button></p-megaMenu> -->
-</nav>
+    <div class="collapse navbar-collapse rightside" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="navbar-brand" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
+        </li> -->
+        <li class="nav-item">
+            <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" routerLink="#"  *ngIf="loggedIn"><i class="pi-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
