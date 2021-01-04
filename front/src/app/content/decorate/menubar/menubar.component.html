@@ -25,19 +25,23 @@
         <img src="../../../assets/primeng.png" height="45" style="margin-left: 10px;">
         TCRU
     </a>
-    <a class="navbar-brand list" routerLink="productinfo">ผลิตภัณฑ์</a>
-    <a class="navbar-brand list" routerLink="/"><i class="bi bi-cart"></i></a>
-    
+    <ul class="navbar-nav mr-auto">
+        <a class="navbar-brand list" routerLink="productinfo">ผลิตภัณฑ์</a>
+        
+    </ul>
 
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
-    <div class="collapse navbar-collapse rightside" id="navbarNav">
-      <ul class="navbar-nav">
+    
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+            <a class="navbar-brand list" routerLink="/"><i class="pi pi-shopping-cart" style="font-size: 1.25rem"></i></a>
+        </li> 
+        <li class="nav-item active">
+            <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
         </li>
         <li class="nav-item">
             <a class="navbar-brand" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
@@ -55,5 +59,5 @@
             <a class="navbar-brand" routerLink="#"  *ngIf="loggedIn"><i class="pi-shopping-cart"></i></a>
         </li>
       </ul>
-    </div>
+    
   </nav>
