@@ -1,3 +1,4 @@
+import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
 import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
@@ -60,6 +61,10 @@ const routes: Routes = [
     path: 'productview/productdetail',
     component: ProductDetailComponent,
   }, 
+  {
+    path: 'cart',
+    component: CartComponent,
+  }
 
 ];
 
