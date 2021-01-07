@@ -3,15 +3,20 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Emloyeeinterface } from '../interface/emloyeeinterface';
 import { map, tap } from 'rxjs/operators';
 import { element } from 'protractor';
+import { Observable, Subject } from 'rxjs';
+import { stringify } from 'querystring';
+import { ApiConstants } from '../constants/ApiConstants';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-
-  private url = 'http://127.0.0.1:8000/api/register/';
-  private validateEmailURL = 'http://127.0.0.1:8000/api/emailvailate/';
+  emloyeeinterface = new Subject<Emloyeeinterface[]>();
+  private url = '/api/register/';
+  private validateEmailURL = '/api/emailvailate/';
+  private profileURL = '/api/editprofile/'
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
@@ -24,7 +29,7 @@ export class CustomerService {
         const newUsers = [];
         for (let user of users) {
           // const email = user.mail;
-          const uName = user.username;
+          const uName = user.email;
           newUsers.push({ username: uName });
         }
         return newUsers;
@@ -33,31 +38,69 @@ export class CustomerService {
     )
   }
 
-  getCustomerByUsername(username: string) {
-    // return this.http.get<any[]>(this.urlRequest, {
-    //   params: new HttpParams().set('username', username)
-    // });
-    const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
-    return user;
+  // getCustomerByUsername(
+  //   username: string
+  // ): Observable<{ status: string; data: Emloyeeinterface; code: number }> {
+  //   try {
+  //     return this.http.get<Emloyeeinterface[]>(`${ApiConstants.baseURl}${this.url}${username}`).pipe(
+  //       map(response => {
+  //         this.emloyeeinterface.next(response["data"][0]);
+  //         return {
+  //           status: response["result"],
+  //           code: response["code"],
+  //           data: response["data"][0] as Emloyeeinterface
+  //         };
+  //       })
+  //     );
+  //   } catch (error) {
+  //     console.table(error.message);
+  //   }
+  // }
+
+
+
+
+
+
+  // getCustomerData(): Subject<Emloyeeinterface[]> {
+  //   return this.emloyeeinterface;
+  // }
+
+  // getCustomerByUsername(username: string) {
+  //   const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
+  //   return user;
+  // }
+
+
+  getCustomerByUsernameValidate(username: string): Observable<Emloyeeinterface[]> {
+    return this.http.get<Emloyeeinterface[]>(`${ApiConstants.baseURl}${this.url}${username}`)
 
   }
 
-  getCustomerByEmail(email: string) {
-    return this.http.get<any[]>(`${this.validateEmailURL}${email}`)
-    // (this.validateEmailURL, {
-    //   params: new HttpParams().set('email', email)
-    // });
+  //เว็ค email ใช้อันนี้
+  getCustomerByEmail(email: string): Observable<Emloyeeinterface[]> {
+    console.log('sssss')
+    const a = this.http.get<Emloyeeinterface[]>(`${ApiConstants.baseURl}${this.validateEmailURL}${email}`)
+    console.log(a)
+    return a;
+  }
+
+  getCustomerProfileByEmail(email: string): Observable<Emloyeeinterface> {
+    return this.http.get<Emloyeeinterface>(`${ApiConstants.baseURl}${this.validateEmailURL}${email}`)
+  }
+
+  editProfile(data) {
+    return this.http.post(`${ApiConstants.baseURl}${this.validateEmailURL}`, data)
   }
 
   postCustomer(body: Emloyeeinterface) {
     return this.http.post(this.url, body)
   }
-  // constructor(private http: HttpClient) {
-  // }
 
-  // getDepartment(data: Emloyeeinterface) {
-  //   let httpParms = new HttpParams();
-  //   const observable = this.http.get<Emloyeeinterface[]>('/api/register', { params: httpParms })
-  //   return observable;
-  // }
+
+
+  getCustomerLogin(): Subject<Emloyeeinterface[]> {
+    return this.emloyeeinterface;
+  }
+
 }

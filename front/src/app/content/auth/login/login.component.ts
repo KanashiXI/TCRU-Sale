@@ -4,7 +4,6 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { compareValidator } from 'src/app/shared/service/compare-validator.directive';
 // import { resolve } from 'dns';
-import { uniqueEmailValidator } from './../../../shared/service/unique-email-validator.directive';
 import { uniqueUsernameValidator } from 'src/app/shared/service/unique-username-validator.directive';
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
@@ -44,15 +43,20 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.customerService.getCustomer().subscribe()
+    // this.customerService.getCustomer().subscribe()
 
     this.createForm();
   }
 
   onSubmit() {
     this.Jarwis.login(this.form).subscribe(
-      data => this.handleResponse(data),
-      error => this.handleError(error)
+      (response: Response) => {
+        this.handleResponse(response);
+        localStorage.setItem("customerUsername", this.form.email);
+      },
+      error => {
+        this.handleError(error);
+      }
     );
   }
 
@@ -64,6 +68,7 @@ export class LoginComponent implements OnInit {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
     this.router.navigateByUrl('/profile');
+    // localStorage.setItem("customerUsername","");
   }
 
   createForm() {
@@ -82,20 +87,7 @@ export class LoginComponent implements OnInit {
     } else {
       const customer = this.reactiveForm.getRawValue();
       this.customerService.postCustomer(customer).subscribe(
-        // (response: Response) => {
-
-        // },
-        // error => {
-        //   this.messageService.clear();
-        //   this.messageService.add({
-        //     key: "errorMessage",
-        //     severity: "error",
-        //     summary: "ผิดพลาด",
-        //     detail: error.error.errorMessage
-        //   });
-        // }
       );
-
     }
   }
 

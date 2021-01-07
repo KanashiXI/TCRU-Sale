@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 
 export function uniqueUsernameValidator(customerService: CustomerService): AsyncValidatorFn {
   return (c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
-    return customerService.getCustomerByUsername(c.value).pipe(
+    return customerService.getCustomerByUsernameValidate(c.value).pipe(
       map(users => {
         return users && users.length > 0 ? { 'uniqueUsername': true } : null;
       })

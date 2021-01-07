@@ -15,7 +15,6 @@ export class ProductService {
     const observable = this.http.get<Productinterface[]>('http://127.0.0.1:8000/api/product/', { params: httpParms })
     return observable;
 
-
   }
 
 
