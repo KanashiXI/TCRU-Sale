@@ -23,6 +23,19 @@
                     </div>
                 </div>
 
+                <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.pattern">
+                        รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข
+                    </div>
+                    <div *ngIf="email.errors['required']">โปรดกรอกชื่อผู้ใช้</div>
+                    <div *ngIf="email.errors.minlength">
+                        รหัสผ่านควรมากกว่า6ตัว
+                    </div>
+                    <div *ngIf="email.errors.maxlength">
+                        รหัสผ่านควรไม่เกิน16ตัว
+                    </div>
+                </div>
+
 
 
                 <div class="p-fluid p-formgrid p-grid">
