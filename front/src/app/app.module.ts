@@ -52,7 +52,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
 import { ShippingComponent } from './content/dealing/shipping/shipping.component';
 import { CouponComponent } from './content/dealing/discount/coupon/coupon.component';
-
+import {DividerModule} from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -109,6 +109,7 @@ import { CouponComponent } from './content/dealing/discount/coupon/coupon.compon
     DropdownModule,
     FieldsetModule,
     BreadcrumbModule,
+    DividerModule,
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
