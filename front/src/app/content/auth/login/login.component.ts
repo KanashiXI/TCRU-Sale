@@ -19,10 +19,10 @@ import { AuthService } from 'src/app/shared/service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  public form = {
-    email: null,
-    password: null
-  };
+  // public form = {
+  //   email: null,
+  //   password: null
+  // };
   public error = null;
 
 
@@ -48,11 +48,20 @@ export class LoginComponent implements OnInit {
     this.createForm();
   }
 
-  onSubmit() {
-    this.Jarwis.login(this.form).subscribe(
+  createForm() {
+    this.reactiveForm = this.fb.group({
+      // username: ['', null, uniqueUsernameValidator(this.customerService), [Validators.required]],
+      email: ['', [Validators.required]],
+      password: [''],
+      // role_id: [2, [Validators.required]],
+    })
+  }
+
+  onClickSubmit() {
+    this.Jarwis.login(this.reactiveForm.getRawValue()).subscribe(
       (response: Response) => {
         this.handleResponse(response);
-        localStorage.setItem("customerUsername", this.form.email);
+        localStorage.setItem("customerUsername", this.reactiveForm.get('email').value);
       },
       error => {
         this.handleError(error);
@@ -71,28 +80,22 @@ export class LoginComponent implements OnInit {
     // localStorage.setItem("customerUsername","");
   }
 
-  createForm() {
-    this.reactiveForm = this.fb.group({
-      username: ['', null, uniqueUsernameValidator(this.customerService), [Validators.required]],
-      password: ['', [Validators.required], Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
-      role_id: [2, [Validators.required]],
-    })
-  }
 
 
-  onClickRegis() {
-    this.submitted = true;
-    if (this.reactiveForm.invalid) {
-      return;
-    } else {
-      const customer = this.reactiveForm.getRawValue();
-      this.customerService.postCustomer(customer).subscribe(
-      );
-    }
-  }
 
-  get username() {
-    return this.reactiveForm.get('username')
+  // onClickRegis() {
+  //   this.submitted = true;
+  //   if (this.reactiveForm.invalid) {
+  //     return;
+  //   } else {
+  //     const customer = this.reactiveForm.getRawValue();
+  //     this.customerService.postCustomer(customer).subscribe(
+  //     );
+  //   }
+  // }
+
+  get email() {
+    return this.reactiveForm.get('email')
   }
   get password() {
     return this.reactiveForm.get('password')
