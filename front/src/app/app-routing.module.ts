@@ -13,6 +13,7 @@ import { SigninComponent } from './content/auth/signin/signin.component';
 import { BeforeLoginService } from './shared/service/before-login.service';
 import { AfterLoginService } from './shared/service/after-login.service';
 import { ProductviewComponent } from './content/shop/productview/productview.component';
+import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
 
 
 
@@ -60,11 +61,16 @@ const routes: Routes = [
   {
     path: 'productview/productdetail',
     component: ProductDetailComponent,
-  }, 
+  },
+  {
+    path: 'tax',
+    component: TaxinvoiceComponent,
+    canActivate: [AfterLoginService]
+  },
   {
     path: 'cart',
     component: CartComponent,
-  }
+  },
 
 ];
 

@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     this.reactiveForm = this.fb.group({
       // username: ['', null, uniqueUsernameValidator(this.customerService), [Validators.required]],
       email: ['', [Validators.required]],
-      password: [''],
+      password: ['', [Validators.required]],
       // role_id: [2, [Validators.required]],
     })
   }

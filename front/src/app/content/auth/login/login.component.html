@@ -28,12 +28,13 @@
                         รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข
                     </div>
                     <div *ngIf="email.errors['required']">โปรดกรอกชื่อผู้ใช้</div>
-                    <div *ngIf="email.errors.minlength">
+
+                    <!-- <div *ngIf="email.errors.minlength">
                         รหัสผ่านควรมากกว่า6ตัว
                     </div>
                     <div *ngIf="email.errors.maxlength">
                         รหัสผ่านควรไม่เกิน16ตัว
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -42,9 +43,20 @@
                     <div class="p-field p-col-10 form-group border-filed p-input-filled">
                         <label>รหัสผ่าน</label>
                         <input type="password" class="form-control" placeholder="Password" formControlName="password"
-                            required>
+                            minlength="6" maxlength="16" required>
                     </div>
                 </div>
+                <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors['required']">โปรดกรอกรหัสผ่าน</div>
+
+                    <div *ngIf="password.errors.minlength">
+                        รหัสผ่านควรมากกว่า6ตัว
+                    </div>
+                    <div *ngIf="password.errors.maxlength">
+                        รหัสผ่านควรไม่เกิน16ตัว
+                    </div>
+                </div>
+
                 <div class="p-fluid p-formgrid p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 p-offset-8">
                         <small routerLink="/login/resetpassword">ลืมรหัสผ่าน</small>

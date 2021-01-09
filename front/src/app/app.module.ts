@@ -53,6 +53,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import { ShippingComponent } from './content/dealing/shipping/shipping.component';
 import { CouponComponent } from './content/dealing/discount/coupon/coupon.component';
 import {DividerModule} from 'primeng/divider';
+import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import {DividerModule} from 'primeng/divider';
     CouponComponent,
     CartComponent,
     AddReduceComponent,
+    TaxinvoiceComponent,
   ],
   imports: [
     BrowserModule,

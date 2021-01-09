@@ -19,21 +19,17 @@
                         <div class="p-field">
                             <label>อีเมล</label>
                             <input type="text" pInputText class="p-inputtext-sm form-control w-100"
-                                formControlName="email" aria-describedby="email-help" />
+                                formControlName="email" aria-describedby="email-help"
+                                pattern="[a-zA-Z0-9][A-Za-z0-9._-]+@[a-z0-9.-]*" />
                             <a class="text-danger">*</a>
                             <small id="email-help">กรุณากรอกอีเมลที่สามารถใช้งานได้</small>
                         </div>
                         <!-- </div> -->
 
                         <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-                            <div *ngIf="email.errors.pattern">
-                                ชื่อผู้ใช้ประกอบไปด้วยa-z พิมพ์เล็กหรือพิมพ์ใหญ่
-                            </div>
-                            <div *ngIf="email.errors['required']">โปรดกรอกอีเมล</div>
-                            <div *ngIf="email.errors['uniqueEmail']">อีเมลนี้มีผู้ใช้แล้ว</div>
-                            <!-- <div class="warn" *ngIf="email.errors.maxlength">
-                                ชื่อผู้ใช้ควรไม่เกิน16ตัว
-                            </div> -->
+                            <div *ngIf="email.errors.pattern">โปรดกรอกอีเมลล์ให้ถูกต้อง</div>
+                            <div *ngIf="email.errors['required']">โปรดกรอกอีเมลล์</div>
+                            <div *ngIf="email.errors['uniqueEmail']">อีเมลล์นี้มีผู้ใช้แล้ว</div>
                         </div>
 
                     </div>
@@ -41,12 +37,6 @@
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <!-- <span class="p-float-label">
-                                <input type="password" class="form-control" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="password" minlength="6" maxlength="16"
-                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$">
-                                <label for="in_title">รหัสผ่าน</label>
-                            </span> -->
                             <div class="p-field">
                                 <label>รหัสผ่าน</label>
                                 <input type="password" pInputText class="p-inputtext-sm form-control w-100"
@@ -72,11 +62,6 @@
                     </div>
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <!-- <span class="p-float-label">
-                                <input type="password" id="password" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="passwordConfirm" maxlength="16">
-                                <label for="">ยืนยันรหัสผ่าน</label>
-                            </span> -->
                             <div class="p-field">
                                 <label for="password_confirmation" calss="decrese">ยืนยันรหัสผ่าน</label>
                                 <input type="password" id="password_confirmation" pInputText
@@ -97,37 +82,29 @@
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <!-- <span class="p-float-label">
-                                <input type="text" id="name" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="firstname">
-                                <label for="">ชื่อ</label>
-                            </span> -->
                             <div class="p-field">
                                 <label for="firstname">ชื่อ (ภาษาไทย)</label>
-                                <!-- <input type="text" id="firstname"" pInputText class="p-inputtext-lg form-control w-100"
-                                    formControlName="firstname"" required minlength="6" maxlength="16"
-                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" /> -->
                                 <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                                    formControlName="firstname" required aria-describedby="firstname-help" />
+                                    formControlName="firstname"
+                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
+                                    required aria-describedby="firstname-help" />
                                 <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
                                     พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>
                         </div>
                         <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                             <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
+                            <div *ngIf="firstname.errors.pattern">โปรดกรอกชื่อให้ถูกต้อง</div>
                         </div>
                     </div>
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <!-- <span class="p-float-label">
-                                <input type="text" id="lastname" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="lastname">
-                                <label for="">นามสกุล</label>
-                            </span> -->
                             <div class="p-field">
                                 <label for="lastname">นามสกุล (ภาษาไทย)</label>
                                 <input type="text" id="lastname" pInputText class="p-inputtext-sm form-control w-100"
-                                    formControlName="lastname" required aria-describedby="lastname-help" />
+                                    formControlName="lastname"
+                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
+                                    required aria-describedby="lastname-help" />
                                 <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
                                     พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร
                                 </small>
@@ -135,6 +112,7 @@
                         </div>
                         <div class="text-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
                             <div *ngIf="lastname.errors['required']">โปรดกรอกนามสกุล</div>
+                            <div *ngIf="lastname.errors.pattern">โปรดกรอกนามสกุลให้ถูกต้อง</div>
                         </div>
                     </div>
                 </div>
