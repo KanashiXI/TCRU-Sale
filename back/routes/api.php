@@ -45,10 +45,6 @@ Route::group([
     Route::post('amphures', 'AumphureController@getAumphure');
     Route::post('districts', 'DistrictController@getDistrict');
 
-
-    
-
-
 });
 
 
