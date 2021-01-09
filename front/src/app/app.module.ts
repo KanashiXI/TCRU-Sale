@@ -54,6 +54,7 @@ import { ShippingComponent } from './content/dealing/shipping/shipping.component
 import { CouponComponent } from './content/dealing/discount/coupon/coupon.component';
 import {DividerModule} from 'primeng/divider';
 import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
+import { AddressComponent } from './content/user/address/address.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.compon
     CartComponent,
     AddReduceComponent,
     TaxinvoiceComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,

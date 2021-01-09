@@ -14,6 +14,7 @@ import { BeforeLoginService } from './shared/service/before-login.service';
 import { AfterLoginService } from './shared/service/after-login.service';
 import { ProductviewComponent } from './content/shop/productview/productview.component';
 import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
+import { AddressComponent } from './content/user/address/address.component';
 
 
 
@@ -70,6 +71,11 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'address',
+    component: AddressComponent,
+    canActivate: [AfterLoginService]
   },
 
 ];
