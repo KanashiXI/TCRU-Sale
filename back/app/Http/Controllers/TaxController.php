@@ -36,4 +36,18 @@ class TaxController extends Controller
             return response()->json(['tax not found']);
         return response()->json(['deleted']); 
     }
+
+    public function editTax(Request $request, tax $tax)
+    {       
+        $edit = tax::where('tax_id', $request->tax_id)->first();
+        $edit->company_name=$request->company_name;
+        $edit->address=$request->address;
+        $edit->postal_code=$request->postal_code;
+        $edit->district=$request->district;
+        $edit->telephone=$request->telephone;
+        $edit->vat_identification_number=$request->vat_identification_number;
+        $edit->user_id=$request->user_id;
+      
+        $result = $edit->save();
+    }
 }

@@ -29,7 +29,7 @@ Route::group([
     Route::post('tax','TaxController@createTax'); //เพิ่มข้อมูลใบกำกับภาษี
     Route::get('tax/{userId}', 'TaxController@gettaxById'); //ค้นหาใบกำกับภาษีด้วยไอดีผู้ใช้
     Route::delete('tax/{taxId}', 'TaxController@deleteTax'); //ค้นหาใบกำกับภาษีด้วยไอดีผู้ใช้
-
+    Route::post('edittax','TaxController@editTax');
 
 
 });
