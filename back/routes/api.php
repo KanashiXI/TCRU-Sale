@@ -32,7 +32,7 @@ Route::group([
     Route::post('edittax','TaxController@editTax');
 
 
-    Route::get('getprovince', 'ProvinceController@getprovinces');
+    
     /////////////////////////////////////////////////////////////////////////////
     // Route::get('/country','CountryController@getCountry');                   
     // Route::post('/state','StateController@getState');                       
@@ -41,9 +41,10 @@ Route::group([
 
     //api ที่อยู่จัดส่งสินค้า
     
-    
-    // Route::get('/districts', 'AddressController@getDistricts');
-    // Route::get('/amphures', 'AddressController@getAmphures');
+    Route::get('province', 'ProvinceController@getprovinces');
+    Route::post('amphures', 'AumphureController@getAumphure');
+    Route::post('districts', 'DistrictController@getDistrict');
+
 
     
 
