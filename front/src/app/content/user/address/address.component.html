@@ -5,5 +5,32 @@
 <br>
 <br>
 <br>
-<br>
-<p>address works!</p>
+<div class="container">
+    <form (ngSubmit)="insertData()">
+
+        <div class="form-group">
+            <label>จังหวัด</label>
+            <select class="form-control" name="province" (change)="getAumph($event)">
+                <option value="">เลือกจังหวัด</option>
+                <option *ngFor="let obj of provinceArr" value="{{obj.id}}">{{obj.name_th}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>อำเภอ</label>
+            <select class="form-control" name="amphure" (change)="getDistr($event)">
+                <option value="">เลือกอำเภอ</option>
+                <option *ngFor="let obj of aumphureArr" value="{{obj.id}}">{{obj.name_th}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>ตำบล</label>
+            <select class="form-control" name="district" (change)="getLast($event)">
+                <option value="">เลือกตำบล</option>
+                <option *ngFor="let obj of districtArr" value="{{obj.id}}">{{obj.name_th}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">บันทึก</button>
+        </div>
+    </form>
+</div>
