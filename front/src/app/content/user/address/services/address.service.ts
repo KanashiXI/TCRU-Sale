@@ -13,16 +13,13 @@ export class AddressService {
     return this.http.get(`${ApiConstants.baseURl}${ApiConstants.provinceURl}`);
   }
 
-  getAumphuret(data) {
+  getAumphure(data) {
     return this.http.post(`${ApiConstants.baseURl}${ApiConstants.aumphureURl}`, data);
   }
 
   getDistrict(data) {
     return this.http.post(`${ApiConstants.baseURl}${ApiConstants.districtURl}`, data);
   }
-
-
-
 
 
 }
