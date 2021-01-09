@@ -26,4 +26,14 @@ class TaxController extends Controller
 
         return response()->json(['newitem'=>$new],201);
     }
+    
+    public function deleteTax($request)
+    {       
+        $tax = tax::where('tax_id', $request);
+            if($tax)
+                $tax->delete(); 
+            else
+            return response()->json(error);
+        return response()->json(null); 
+    }
 }
