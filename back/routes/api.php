@@ -17,13 +17,22 @@ Route::group([
 
 
     Route::get('/profile', 'AuthController@userProfile'); 
-    
+    Route::get('/product','ProductController@getproduct'); //get data
     Route::get('register','RegisterController@getcustomer'); //get data
     Route::get('/register/{username}','RegisterController@getCustomerByUsername'); 
+
+
+
     Route::post('/register','RegisterController@createcustomer'); //create data
-    Route::get('/product','ProductController@getproduct'); //get data
+
+
+    Route::post('tax','TaxController@createTax'); //เพิ่มข้อมูลใบกำกับภาษี
+    Route::get('tax/{userId}', 'TaxController@gettaxById'); //ค้นหาใบกำกับภาษีด้วยไอดีผู้ใช้
+
+    
 
 });
+
 
 // Route::group([
 //     'middleware' => 'api',
