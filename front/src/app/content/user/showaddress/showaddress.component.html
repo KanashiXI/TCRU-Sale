@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="p-d-flex p-jc-center">
+    <ul>
+        <p>ที่อยู่จัดส่ง</p>
+        <li *ngFor="let item of dataSource; let i = index">
+            <p-card>
+                <p>ที่อยู่ {{item.address}}</p>
+
+                <button type="submit" pButton label="บันทึก" class="p-button-raised" routerLink="../address"
+                    (click)="onClickSubmit(item.address_id)"></button>
+
+
+
+            </p-card>
+        </li>
+    </ul>
+</div>

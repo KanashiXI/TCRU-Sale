@@ -8,7 +8,7 @@ class AddressController extends Controller
 {
     public function getUserShippingAddress($request)
     {
-        $getall = address::where('address_id', $request)->get();  
+        $getall = address::where('user_id', $request)->get();  
         return response()->json($getall,200); 
     }
 

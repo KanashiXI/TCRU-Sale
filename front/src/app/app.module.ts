@@ -36,7 +36,7 @@ import { FooterComponent } from './content/decorate/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/user/profile/profile.component';
 import { SigninComponent } from './content/auth/signin/signin.component';
-import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { DialogModule } from 'primeng/dialog';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { CardModule } from 'primeng/card';
@@ -46,15 +46,16 @@ import { AuthService } from './shared/service/auth.service';
 import { AfterLoginService } from './shared/service/after-login.service';
 import { BeforeLoginService } from './shared/service/before-login.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
-import {TabMenuModule} from 'primeng/tabmenu';
-import {TabViewModule} from 'primeng/tabview';
-import {DropdownModule} from 'primeng/dropdown';
-import {FieldsetModule} from 'primeng/fieldset';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { DropdownModule } from 'primeng/dropdown';
+import { FieldsetModule } from 'primeng/fieldset';
 import { ShippingComponent } from './content/dealing/shipping/shipping.component';
 import { CouponComponent } from './content/dealing/discount/coupon/coupon.component';
-import {DividerModule} from 'primeng/divider';
+import { DividerModule } from 'primeng/divider';
 import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
 import { AddressComponent } from './content/user/address/address.component';
+import { ShowaddressComponent } from './content/user/showaddress/showaddress.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { AddressComponent } from './content/user/address/address.component';
     AddReduceComponent,
     TaxinvoiceComponent,
     AddressComponent,
+    ShowaddressComponent,
   ],
   imports: [
     BrowserModule,

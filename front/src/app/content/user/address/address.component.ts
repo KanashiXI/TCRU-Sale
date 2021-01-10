@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -8,13 +9,15 @@ import { Amphure } from './interfaces/amphure';
 import { District } from './interfaces/district';
 import { Province } from './interfaces/province';
 import { AddressService } from './services/address.service';
-
+/////// insert Address
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
+  message: string;
+
   errorMessage: String;
   submitted = false;
 
@@ -39,10 +42,16 @@ export class AddressComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.addressService.sharedMessage.subscribe(message =>
+      this.message = message
+    ) ///สำหรับย้ายไปทำ component edit
     this.getPro();
     this.createForm();
     this.checkCustomer();
   }
+  // receiveMessage($event) {
+  //   this.message = $event
+  // }
 
   checkCustomer() {
     const requestData = {
@@ -106,7 +115,7 @@ export class AddressComponent implements OnInit {
     }
     this.provinceValue = obj.id;
     this.geographieValue = obj.geography_id;
-    this.reactiveForm.patchValue({   // set จังหวัดใน form สำหรับ insert 
+    this.reactiveForm.patchValue({   // set จังหวัด,ภาค ใน form สำหรับ insert 
       province_id: this.provinceValue,
       geographic_id: this.geographieValue,
     })
