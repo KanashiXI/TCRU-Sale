@@ -8,5 +8,4 @@ class geographies extends Model
 {
     protected $table  = 'geographies';
     protected $primaryKey = 'id';
-
 }

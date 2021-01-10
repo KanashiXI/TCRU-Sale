@@ -8,6 +8,7 @@ export interface Address {
     province_id: number;
     geographic_id: number;
     status?: any;
+    telephone: string;
     created_at?: any;
     updated_at?: any;
 }

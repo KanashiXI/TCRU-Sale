@@ -11,6 +11,9 @@ export class ApiConstants {
     public static get districtURl(): string {
         return '/api/districts';
     }
+    public static get daddressURl(): string {
+        return '/api/shipaddress';
+    }
 
 
 }

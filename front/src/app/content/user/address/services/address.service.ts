@@ -4,6 +4,7 @@ import { ApiConstants } from 'src/app/shared/constants/ApiConstants';
 import { Amphure } from '../interfaces/amphure';
 import { District } from '../interfaces/district';
 import { Province } from '../interfaces/province';
+import { Address } from './../interfaces/address';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class AddressService {
 
   getDistrict(data) {
     return this.http.post<District[]>(`${ApiConstants.baseURl}${ApiConstants.districtURl}`, data);
+  }
+
+  insertAddress(data) {
+    return this.http.post<Address[]>(`${ApiConstants.baseURl}${ApiConstants.daddressURl}`, data);
   }
 
 

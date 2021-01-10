@@ -128,37 +128,17 @@ export class ProfileComponent implements OnInit {
     return this.reactiveForm.get('postal_code')
   }
 
-  // handleResponse(data) {
-  //   this.emp = data;
-  // }
-  // handleError(error) {
-  //   this.error = error.error.error;
-  // }
-
-
-
   onClickSubmit() {
 
     this.submitted = true;
     if (this.reactiveForm.invalid) {
       return;
     } else {
-
       this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
-
     }
 
   }
 
-  // onClickSearch() {
-  //   const customer = this.reactiveForm.getRawValue();
-  //   console.log(customer)
-  //   this.customerService.getCustomerByUsernameValidate(customer).subscribe(
-  //     response => {
-  //       this.emp = response;
-  //     }
-  //   );
-  // }
 
 
 

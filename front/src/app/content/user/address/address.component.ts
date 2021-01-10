@@ -15,8 +15,8 @@ import { AddressService } from './services/address.service';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-  [x: string]: any;
-
+  errorMessage: String;
+  submitted = false;
 
   shippingAddress: Address;
 
@@ -27,6 +27,7 @@ export class AddressComponent implements OnInit {
   provinceValue: number;
   aumphureValue: number;
   districtValue: number;
+  geographieValue: number;
   dataForm: Emloyeeinterface;
 
   reactiveForm: FormGroup;
@@ -56,6 +57,7 @@ export class AddressComponent implements OnInit {
           firstname: this.dataForm[0].firstname,
           lastname: this.dataForm[0].lastname,
           telephone: this.dataForm[0].telephone,
+          user_id: this.dataForm[0].id,
           // postal_code: this.dataForm[0].postal_code,
         })
       },
@@ -67,12 +69,11 @@ export class AddressComponent implements OnInit {
     this.reactiveForm = this.fb.group({
       address: ['', [Validators.required]],
       user_id: ['', [Validators.required]],
+      province_id: ['', [Validators.required]],
       amphures_id: ['', [Validators.required]],
       districts_id: ['', [Validators.required]],
-      province_id: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
       geographic_id: ['', [Validators.required]],
-      status: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
@@ -80,6 +81,16 @@ export class AddressComponent implements OnInit {
     })
   }
 
+  onClickSubmit() {
+
+    // this.submitted = true;
+    // if (this.reactiveForm.invalid) {
+    //   return;
+    // } else {
+    this.addressService.insertAddress(this.reactiveForm.getRawValue()).subscribe();
+    // }
+
+  }
 
   getPro() {
     this.addressService.getProvince().subscribe(
@@ -90,9 +101,15 @@ export class AddressComponent implements OnInit {
 
   getAumph(event) {
     var obj = {
-      id: event.target.value
+      id: event.target.value,
+      geography_id: event.target.value
     }
     this.provinceValue = obj.id;
+    this.geographieValue = obj.geography_id;
+    this.reactiveForm.patchValue({   // set จังหวัดใน form สำหรับ insert 
+      province_id: this.provinceValue,
+      geographic_id: this.geographieValue,
+    })
     this.addressService.getAumphure(obj).subscribe(res => {
       this.aumphureArr = res;
     });
@@ -103,19 +120,38 @@ export class AddressComponent implements OnInit {
       id: event.target.value
     }
     this.aumphureValue = obj.id;
+    this.reactiveForm.patchValue({   // set aumphureใน form สำหรับ insert 
+      amphures_id: this.aumphureValue,
+    });
     this.addressService.getDistrict(obj).subscribe(res => {
       this.districtArr = res;
     });
   }
+
   getLast(event) {
     var obj = {
       id: event.target.value
     }
     this.districtValue = obj.id;
+    this.reactiveForm.patchValue({   // set districtใน form สำหรับ insert 
+      districts_id: this.districtValue,
+    });
   }
 
-  onClickSubmit() {
-
+  get firstname() {
+    return this.reactiveForm.get('firstname')
+  }
+  get lastname() {
+    return this.reactiveForm.get('lastname')
+  }
+  get telephone() {
+    return this.reactiveForm.get('telephone')
+  }
+  get address() {
+    return this.reactiveForm.get('address')
+  }
+  get postal_code() {
+    return this.reactiveForm.get('postal_code')
   }
 
 
