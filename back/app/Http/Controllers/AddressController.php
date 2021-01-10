@@ -36,5 +36,19 @@ class AddressController extends Controller
             return response()->json(['address not found']);
         return response()->json(['deleted']); 
     }
+
+    public function editShippingAddress(Request $request, address $address)
+    {       
+        $edit = address::where('address_id', $request->address_id)->first();
+        $edit->address=$request->address;
+        $edit->amphures_id=$request->amphures_id;
+        $edit->districts_id=$request->districts_id;
+        $edit->postal_code=$request->postal_code;
+        $edit->province_id=$request->province_id;
+        $edit->geographic_id=$request->geographic_id;
+        $edit->status=$request->status;
+
+        $result = $edit->save();
+    }
     
 }
