@@ -45,8 +45,7 @@ class TaxController extends Controller
         $edit->district=$request->district;
         $edit->telephone=$request->telephone;
         $edit->vat_identification_number=$request->vat_identification_number;
-        $edit->user_id=$request->user_id;
-      
+        $edit->user_id=$request->user_id;      
         $result = $edit->save();
     }
 }

@@ -26,5 +26,15 @@ class AddressController extends Controller
         $new->save();
         return response()->json(['newitem'=>$new],201);
     }
+
+    public function deleteShippingAddress($request)
+    {       
+        $address = address::where('address_id', $request);
+            if($address)
+                $address->delete(); 
+            else
+            return response()->json(['address not found']);
+        return response()->json(['deleted']); 
+    }
     
 }
