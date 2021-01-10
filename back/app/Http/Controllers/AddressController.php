@@ -47,7 +47,6 @@ class AddressController extends Controller
         $edit->province_id=$request->province_id;
         $edit->geographic_id=$request->geographic_id;
         $edit->status=$request->status;
-
         $result = $edit->save();
     }
     
