@@ -23,7 +23,6 @@ class TaxController extends Controller
         $new->vat_identification_number = $request->input('vat_identification_number');       
         $new->user_id = $request->input('user_id');       
         $new->save();
-
         return response()->json(['newitem'=>$new],201);
     }
 
