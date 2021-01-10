@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   public error = null;
   reactiveForm: FormGroup;
   submitted = false;
-  subscription = new Subscription();
+  // subscription = new Subscription();
   provinve: SelectItem[];
   setEmail: String;
   errorMessage: String;
