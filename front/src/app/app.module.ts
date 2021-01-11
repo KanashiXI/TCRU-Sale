@@ -57,6 +57,9 @@ import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.compon
 import { AddressComponent } from './content/user/address/address.component';
 import { ShowaddressComponent } from './content/user/showaddress/showaddress.component';
 import { EditaddressComponent } from './content/user/editaddress/editaddress.component';
+import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.component';
+import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
+import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +88,9 @@ import { EditaddressComponent } from './content/user/editaddress/editaddress.com
     AddressComponent,
     ShowaddressComponent,
     EditaddressComponent,
+    ShowtaxComponent,
+    InserttaxComponent,
+    EdittaxComponent,
   ],
   imports: [
     BrowserModule,

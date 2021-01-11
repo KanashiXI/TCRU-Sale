@@ -61,8 +61,9 @@ export class EditaddressComponent implements OnInit {
           firstname: this.dataForm[0].firstname,
           lastname: this.dataForm[0].lastname,
           telephone: this.dataForm[0].telephone,
-          user_id: this.dataForm[0].id,
+          user_id: this.dataForm[0].user_id,
           address: this.dataForm[0].address,
+          address_id: this.dataForm[0].address_id,
           postal_code: this.dataForm[0].postal_code,
           // postal_code: this.dataForm[0].postal_code,
         })
@@ -73,6 +74,7 @@ export class EditaddressComponent implements OnInit {
 
   createForm() {
     this.reactiveForm = this.fb.group({
+      address_id: ['', [Validators.required]],
       address: ['', [Validators.required]],
       user_id: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
@@ -89,7 +91,7 @@ export class EditaddressComponent implements OnInit {
   }
 
   onClickSubmit() {
-
+    this.addressService.editAddress(this.reactiveForm.getRawValue()).subscribe();
   }
 
   getPro() {

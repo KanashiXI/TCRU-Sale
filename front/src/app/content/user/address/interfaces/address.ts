@@ -11,4 +11,6 @@ export interface Address {
     telephone: string;
     created_at?: any;
     updated_at?: any;
+    firstname: string;
+    lastname: string;
 }

@@ -48,6 +48,10 @@ export class AddressService {
     return this.http.get<Address[]>(`${ApiConstants.baseURl}${ApiConstants.daddressURl}/${data}`);
   }
 
+  editAddress(data) {
+    return this.http.post<Address[]>(`${ApiConstants.baseURl}${ApiConstants.editressURl}`, data);
+  }
+
 
 
 
