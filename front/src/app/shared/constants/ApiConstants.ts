@@ -20,6 +20,9 @@ export class ApiConstants {
     public static get getoneaddressURL(): string {
         return '/api/oneaddress';
     }
+    public static get gettaxURL(): string {
+        return '/api/tax';
+    }
     public static get edittaxURL(): string {
         return '/api/edittax';
     }
