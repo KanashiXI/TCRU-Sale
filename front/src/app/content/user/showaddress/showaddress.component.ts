@@ -12,7 +12,7 @@ import { AddressService } from '../address/services/address.service';
   styleUrls: ['./showaddress.component.css']
 })
 export class ShowaddressComponent implements OnInit {
-  @Output() newItemEvent = new EventEmitter<string>();
+  // @Output() newItemEvent = new EventEmitter<string>();
   dataForm: Emloyeeinterface;
   errorMessage: String;
   dataSource: Address[];
@@ -52,7 +52,9 @@ export class ShowaddressComponent implements OnInit {
       // this.totalRecords = data.length;
     });
   }
-
+  onClickDelete(data) {
+    this.addressService.deleteAddress(data).subscribe();
+  }
 
   onClickSubmit(data) {
     this.addressService.nextMessage(data);

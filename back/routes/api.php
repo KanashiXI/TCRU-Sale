@@ -31,14 +31,15 @@ Route::group([
     Route::get('province', 'ProvinceController@getprovinces');
     Route::post('amphures', 'AumphureController@getAumphure');
     Route::post('districts', 'DistrictController@getDistrict');
-    
+
     //api ที่อยู่จัดส่งสินค้า(form)
     //api แสดงที่อยู่จัดส่งสินค้า, เพิ่มที่อยู่จัดส่งสินค้า, ลบที่อยู่จัดส่งสินค้า, แก้ไขที่อยู่จัดส่งสินค้า (table'address')
     Route::get('shipaddress/{userId}', 'AddressController@getUserShippingAddress');
     Route::post('shipaddress','AddressController@createShippingAddress'); //เพิ่มที่อยู่ใน table address
     Route::delete('shipaddress/{address_id}', 'AddressController@deleteShippingAddress');
     Route::post('editshipaddress','AddressController@editShippingAddress');
-
+    //เพิ่ม
+    Route::get('oneaddress/{address_id}', 'AddressController@getOneShippingAddress');
 });
 
 

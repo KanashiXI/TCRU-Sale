@@ -56,6 +56,7 @@ import { DividerModule } from 'primeng/divider';
 import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
 import { AddressComponent } from './content/user/address/address.component';
 import { ShowaddressComponent } from './content/user/showaddress/showaddress.component';
+import { EditaddressComponent } from './content/user/editaddress/editaddress.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { ShowaddressComponent } from './content/user/showaddress/showaddress.com
     TaxinvoiceComponent,
     AddressComponent,
     ShowaddressComponent,
+    EditaddressComponent,
   ],
   imports: [
     BrowserModule,

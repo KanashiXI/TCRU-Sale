@@ -12,15 +12,17 @@
 <div class="p-d-flex p-jc-center">
     <ul>
         <p>ที่อยู่จัดส่ง</p>
+        <button type="submit" pButton label="เพิ่มที่อยู่จัดส่ง" class="p-button-raised"
+            routerLink="../address"></button>
         <li *ngFor="let item of dataSource; let i = index">
             <p-card>
                 <p>ที่อยู่ {{item.address}}</p>
-
-                <button type="submit" pButton label="บันทึก" class="p-button-raised" routerLink="../address"
-                    (click)="onClickSubmit(item.address_id)"></button>
+                <!-- อันนี้จะทำลิ้งไปหน้าแก้ไข (แก้ subject ใน service จาก insert ไปใช้ใน edit) -->
 
 
-
+                <button routerLink="../address" (click)="onClickSubmit(item.address_id)" pButton pRipple
+                    label="แก้ไข"></button>
+                <button pButton pRipple label="ลบ" icon="pi pi-trash" (click)="onClickDelete(item.address_id)"></button>
             </p-card>
         </li>
     </ul>

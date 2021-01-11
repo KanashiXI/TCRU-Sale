@@ -16,6 +16,7 @@ import { ProductviewComponent } from './content/shop/productview/productview.com
 import { TaxinvoiceComponent } from './content/user/taxinvoice/taxinvoice.component';
 import { AddressComponent } from './content/user/address/address.component';
 import { ShowaddressComponent } from './content/user/showaddress/showaddress.component';
+import { EditaddressComponent } from './content/user/editaddress/editaddress.component';
 
 
 
@@ -81,6 +82,11 @@ const routes: Routes = [
   {
     path: 'showaddress',
     component: ShowaddressComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'editaddress',
+    component: EditaddressComponent,
     canActivate: [AfterLoginService]
   },
 

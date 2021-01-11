@@ -1,22 +1,21 @@
-import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 import { CustomerService } from 'src/app/shared/service/customer.service';
-import { Address } from './interfaces/address';
-import { Amphure } from './interfaces/amphure';
-import { District } from './interfaces/district';
-import { Province } from './interfaces/province';
-import { AddressService } from './services/address.service';
-/////// insert Address
+import { Address } from '../address/interfaces/address';
+import { Amphure } from '../address/interfaces/amphure';
+import { District } from '../address/interfaces/district';
+import { Province } from '../address/interfaces/province';
+import { AddressService } from '../address/services/address.service';
+
 @Component({
-  selector: 'app-address',
-  templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css']
+  selector: 'app-editaddress',
+  templateUrl: './editaddress.component.html',
+  styleUrls: ['./editaddress.component.css']
 })
-export class AddressComponent implements OnInit {
-  // message: string;
+export class EditaddressComponent implements OnInit {
+  message: string;
 
   errorMessage: String;
   submitted = false;
@@ -38,28 +37,23 @@ export class AddressComponent implements OnInit {
     private customerService: CustomerService,
     private addressService: AddressService,
     private fb: FormBuilder,
-
   ) { }
 
   ngOnInit(): void {
-    // this.addressService.sharedMessage.subscribe(message =>
-    //   this.message = message
-    // ) 
-    ///สำหรับย้ายไปทำ component edit <-- ย้ายแล้ว
+    this.addressService.sharedMessage.subscribe(message =>
+      this.message = message
+    )
     this.getPro();
     this.createForm();
-    this.checkCustomer();
+    this.getEditForm(this.message);
   }
-  // receiveMessage($event) {
-  //   this.message = $event
-  // }
 
-  checkCustomer() {
-    const requestData = {
-      ...Subject,
-      customerUsername: localStorage.getItem('customerUsername'),
-    }
-    this.customerService.getCustomerProfileByEmail(requestData.customerUsername).subscribe(
+  getEditForm(data) {
+    // const requestData = {
+    //   ...Subject,
+    //   customerUsername: localStorage.getItem('customerUsername'),
+    // }
+    this.addressService.getOneAddress(data).subscribe(
       res => {
         this.dataForm = res;
         this.reactiveForm.patchValue({
@@ -68,6 +62,8 @@ export class AddressComponent implements OnInit {
           lastname: this.dataForm[0].lastname,
           telephone: this.dataForm[0].telephone,
           user_id: this.dataForm[0].id,
+          address: this.dataForm[0].address,
+          postal_code: this.dataForm[0].postal_code,
           // postal_code: this.dataForm[0].postal_code,
         })
       },
@@ -79,26 +75,20 @@ export class AddressComponent implements OnInit {
     this.reactiveForm = this.fb.group({
       address: ['', [Validators.required]],
       user_id: ['', [Validators.required]],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      telephone: ['', [Validators.required]],
       province_id: ['', [Validators.required]],
       amphures_id: ['', [Validators.required]],
       districts_id: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
       geographic_id: ['', [Validators.required]],
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
+
 
     })
   }
 
   onClickSubmit() {
-
-    // this.submitted = true;
-    // if (this.reactiveForm.invalid) {
-    //   return;
-    // } else {
-    this.addressService.insertAddress(this.reactiveForm.getRawValue()).subscribe();
-    // }
 
   }
 
@@ -163,7 +153,6 @@ export class AddressComponent implements OnInit {
   get postal_code() {
     return this.reactiveForm.get('postal_code')
   }
-
 
 
 }

@@ -11,6 +11,12 @@ class AddressController extends Controller
         $getall = address::where('user_id', $request)->get();  
         return response()->json($getall,200); 
     }
+    
+    public function getOneShippingAddress($request)
+    {
+        $getall = address::where('address_id', $request)->get();  
+        return response()->json($getall,200); 
+    }
 
     public function createShippingAddress(Request $request)
     {       

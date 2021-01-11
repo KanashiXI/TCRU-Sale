@@ -14,6 +14,12 @@ export class ApiConstants {
     public static get daddressURl(): string {
         return '/api/shipaddress';
     }
+    public static get editressURl(): string {
+        return '/api/editshipaddress';
+    }
+    public static get getoneaddressURL(): string {
+        return '/api/oneaddress';
+    }
 
 
 
