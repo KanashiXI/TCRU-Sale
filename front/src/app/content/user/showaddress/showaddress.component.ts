@@ -36,6 +36,7 @@ export class ShowaddressComponent implements OnInit {
       res => {
         this.dataForm = res;
         const user_id = res[0].id;
+        const address_id = res[0].address_id;
         this.getUserAddress(user_id);
       },
       error => this.errorMessage = <any>error
@@ -49,6 +50,7 @@ export class ShowaddressComponent implements OnInit {
   getUserAddress(user_id) {
     this.addressService.getShippingAddress(user_id).subscribe(data => {
       this.dataSource = data;
+
       // this.totalRecords = data.length;
     });
   }
@@ -58,6 +60,7 @@ export class ShowaddressComponent implements OnInit {
 
   onClickSubmit(data) {
     this.addressService.nextMessage(data);
+    localStorage.setItem("address_id", data);
   }
 
   // loadCustomers(event: LazyLoadEvent) {

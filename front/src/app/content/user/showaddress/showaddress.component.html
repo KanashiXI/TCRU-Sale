@@ -18,9 +18,7 @@
             <p-card>
                 <p>ที่อยู่ {{item.address}}</p>
                 <!-- อันนี้จะทำลิ้งไปหน้าแก้ไข (แก้ subject ใน service จาก insert ไปใช้ใน edit) -->
-
-
-                <button routerLink="../address" (click)="onClickSubmit(item.address_id)" pButton pRipple
+                <button routerLink="../editaddress" (click)="onClickSubmit(item.address_id)" pButton pRipple
                     label="แก้ไข"></button>
                 <button pButton pRipple label="ลบ" icon="pi pi-trash" (click)="onClickDelete(item.address_id)"></button>
             </p-card>

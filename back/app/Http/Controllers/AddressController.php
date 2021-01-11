@@ -11,7 +11,7 @@ class AddressController extends Controller
         $getall = address::where('user_id', $request)->get();  
         return response()->json($getall,200); 
     }
-    
+
     public function getOneShippingAddress($request)
     {
         $getall = address::where('address_id', $request)->get();  
@@ -29,7 +29,9 @@ class AddressController extends Controller
         $new->province_id = $request->input('province_id');
         $new->geographic_id = $request->input('geographic_id');
         $new->status = $request->input('status');            
-        $new->telephone = $request->input('telephone');            
+        $new->telephone = $request->input('telephone');
+        $new->firstname = $request->input('firstname'); 
+        $new->lastname = $request->input('lastname');             
         $new->save();
         return response()->json(['newitem'=>$new],201);
     }
@@ -55,6 +57,8 @@ class AddressController extends Controller
         $edit->geographic_id=$request->geographic_id;
         $edit->status=$request->status;
         $edit->telephone=$request->telephone;
+        $edit->firstname=$request->firstname;
+        $edit->lastname=$request->lastname;
         $result = $edit->save();
     }
     

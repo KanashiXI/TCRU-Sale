@@ -45,7 +45,7 @@ export class AddressService {
   }
 
   getShippingAddress(data) {
-    return this.http.post<Address[]>(`${ApiConstants.baseURl}${ApiConstants.editressURl}`, data);
+    return this.http.get<Address[]>(`${ApiConstants.baseURl}${ApiConstants.daddressURl}/${data}`);
   }
 
 

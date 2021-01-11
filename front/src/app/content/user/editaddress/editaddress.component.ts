@@ -43,16 +43,16 @@ export class EditaddressComponent implements OnInit {
     this.addressService.sharedMessage.subscribe(message =>
       this.message = message
     )
+    const requestData = {
+      ...Subject,
+      address_id: localStorage.getItem('address_id'),
+    }
     this.getPro();
     this.createForm();
-    this.getEditForm(this.message);
+    this.getEditForm(requestData.address_id);
   }
 
   getEditForm(data) {
-    // const requestData = {
-    //   ...Subject,
-    //   customerUsername: localStorage.getItem('customerUsername'),
-    // }
     this.addressService.getOneAddress(data).subscribe(
       res => {
         this.dataForm = res;
