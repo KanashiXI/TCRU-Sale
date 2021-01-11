@@ -10,8 +10,18 @@ export class TaxService {
 
   constructor(private http: HttpClient) { }
 
-  getProvince(data) {
+  getTax(data) {
     return this.http.get<Tax[]>(`${ApiConstants.baseURl}${ApiConstants.gettaxURL}/${data}`);
   }
+
+  deleteTax(data) {
+    return this.http.delete(`${ApiConstants.baseURl}${ApiConstants.gettaxURL}/${data}`);
+  }
+
+  editTax(data) {
+    return this.http.post<Tax[]>(`${ApiConstants.baseURl}${ApiConstants.edittaxURL}`, data);
+  }
+
+
 
 }

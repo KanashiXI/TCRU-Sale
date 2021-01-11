@@ -17,13 +17,10 @@ export class ShowaddressComponent implements OnInit {
   errorMessage: String;
   dataSource: Address[];
   shippingAddressList: Address[];
-  // totalRecords: number;
-  // loading: boolean;
 
   constructor(
     private addressService: AddressService,
     private customerService: CustomerService,
-
   ) { }
 
   ngOnInit(): void {
@@ -41,19 +38,14 @@ export class ShowaddressComponent implements OnInit {
       },
       error => this.errorMessage = <any>error
     )
-    //// ////////////////////////////////ต้องการ id user <--- ได้แล้ว
-
-    // this.loading = true;
-
   }
 
   getUserAddress(user_id) {
     this.addressService.getShippingAddress(user_id).subscribe(data => {
       this.dataSource = data;
-
-      // this.totalRecords = data.length;
     });
   }
+
   onClickDelete(data) {
     this.addressService.deleteAddress(data).subscribe();
   }
@@ -63,16 +55,6 @@ export class ShowaddressComponent implements OnInit {
     localStorage.setItem("address_id", data);
   }
 
-  // loadCustomers(event: LazyLoadEvent) {
-  //   this.loading = true;
-  //   setTimeout(() => {
-  //     if (this.shippingAddressList) {
-  //       this.shippingAddressList = this.dataSource.slice(event.first, (event.first + event.rows));
-  //       this.loading = false;
-  //     }
-  //   }, 1000);
-  //   console.log(this.shippingAddressList[0].address)
-  // }
 
 
 }

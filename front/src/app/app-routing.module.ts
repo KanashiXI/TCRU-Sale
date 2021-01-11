@@ -18,6 +18,7 @@ import { AddressComponent } from './content/user/address/address.component';
 import { ShowaddressComponent } from './content/user/showaddress/showaddress.component';
 import { EditaddressComponent } from './content/user/editaddress/editaddress.component';
 import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.component';
+import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
 
 
 
@@ -88,6 +89,11 @@ const routes: Routes = [
   {
     path: 'showtax',
     component: ShowtaxComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'inserttax',
+    component: InserttaxComponent,
     canActivate: [AfterLoginService]
   },
 
