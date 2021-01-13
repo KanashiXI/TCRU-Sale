@@ -58,7 +58,6 @@ export class EditprofileComponent implements OnInit {
     this.setEmail = requestData.customerUsername;
     this.customerService.getCustomerProfileByEmail(requestData.customerUsername).subscribe(
       res => {
-        // console.log(res);
         this.dataForm = res;
         this.reactiveForm.patchValue({
           name_title: this.dataForm[0].name_title,
@@ -132,12 +131,12 @@ export class EditprofileComponent implements OnInit {
 
   onClickSubmit() {
 
-    this.submitted = true;
-    if (this.reactiveForm.invalid) {
-      return;
-    } else {
-      this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
-    }
+    // this.submitted = true;
+    // if (this.reactiveForm.invalid) {
+    //   return;
+    // } else {
+    //   this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
+    // }
 
   }
 
