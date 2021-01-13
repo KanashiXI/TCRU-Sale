@@ -15,10 +15,16 @@ class TaxController extends Controller
     public function createTax(Request $request)
     {       
         $new = new tax;
+        $new->firstname = $request->input('firstname');
+        $new->lastname = $request->input('lastname');
+        
+        $new->company_name = $request->input('company_name');
         $new->company_name = $request->input('company_name');
         $new->address = $request->input('address');
         $new->postal_code = $request->input('postal_code');
-        $new->district = $request->input('district');
+        $new->province_id = $request->input('province_id');
+        $new->amphure_id = $request->input('amphure_id');
+        $new->district = $request->input('district_id');
         $new->telephone = $request->input('telephone');
         $new->vat_identification_number = $request->input('vat_identification_number');       
         $new->user_id = $request->input('user_id');       
@@ -39,13 +45,23 @@ class TaxController extends Controller
     public function editTax(Request $request, tax $tax)
     {       
         $edit = tax::where('tax_id', $request->tax_id)->first();
+        $edit->firstname=$request->firstname;
+        $edit->lastname=$request->lastname;
         $edit->company_name=$request->company_name;
         $edit->address=$request->address;
         $edit->postal_code=$request->postal_code;
-        $edit->district=$request->district;
+        $edit->province_id=$request->province_id;
+        $edit->amphure_id=$request->amphure_id;
+        $edit->district_id=$request->district_id;
         $edit->telephone=$request->telephone;
         $edit->vat_identification_number=$request->vat_identification_number;
         $edit->user_id=$request->user_id;      
         $result = $edit->save();
+    }
+
+    public function getOneTax($request)
+    {
+        $getall = tax::where('tax_id', $request)->get();  
+        return response()->json($getall,200); 
     }
 }

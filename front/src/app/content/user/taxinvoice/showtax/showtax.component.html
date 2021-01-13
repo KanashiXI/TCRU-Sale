@@ -15,7 +15,8 @@
             <p-card>
                 <p>ที่อยู่ {{item.company_name}}</p>
                 <!-- อันนี้จะทำลิ้งไปหน้าแก้ไข (แก้ subject ใน service จาก insert ไปใช้ใน edit) -->
-                <button pButton pRipple label="แก้ไข"></button>
+                <button pButton pRipple label="แก้ไข" routerLink="../edittax"
+                    (click)="onClickEdit(item.tax_id)"></button>
                 <button pButton pRipple label="ลบ" icon="pi pi-trash" (click)="onClickDelete(item.tax_id)"></button>
             </p-card>
         </li>

@@ -23,6 +23,9 @@ export class ApiConstants {
     public static get gettaxURL(): string {
         return '/api/tax';
     }
+    public static get getonetaxURL(): string {
+        return '/api/onetax';
+    }
     public static get edittaxURL(): string {
         return '/api/edittax';
     }

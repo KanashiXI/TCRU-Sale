@@ -88,6 +88,7 @@ export class AddressComponent implements OnInit {
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
 
+
     })
   }
 
@@ -163,6 +164,7 @@ export class AddressComponent implements OnInit {
   get postal_code() {
     return this.reactiveForm.get('postal_code')
   }
+
 
 
 

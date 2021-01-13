@@ -97,8 +97,6 @@ export class CustomerService {
     return this.http.post(this.url, body)
   }
 
-
-
   getCustomerLogin(): Subject<Emloyeeinterface[]> {
     return this.emloyeeinterface;
   }

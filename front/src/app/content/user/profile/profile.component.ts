@@ -16,16 +16,14 @@ export class ProfileComponent implements OnInit {
 
   @Input() dataEmpForm: Emloyeeinterface;
   dataForm: Emloyeeinterface;
-  // employeeData: Subject<Emloyeeinterface[]> = this.getCustomerData();
   public error = null;
   reactiveForm: FormGroup;
   submitted = false;
-  // subscription = new Subscription();
   provinve: SelectItem[];
   setEmail: String;
   errorMessage: String;
   test: String;
-  // emp: Emloyeeinterface[];
+
 
   constructor(
     private customerService: CustomerService,
@@ -36,17 +34,9 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.customerService.getCustomer().subscribe()
     this.createForm();
     this.checkCustomer();
-
-    // this.setForm()
-
   }
-
-  // ngOnDestroy(): void {
-  //   this.subscription.unsubscribe();
-  // }
 
   checkCustomer() {
     const requestData = {
@@ -63,25 +53,18 @@ export class ProfileComponent implements OnInit {
           firstname: this.dataForm[0].firstname,
           lastname: this.dataForm[0].lastname,
           telephone: this.dataForm[0].telephone,
-          address: this.dataForm[0].address,
-          province: this.dataForm[0].province,
-          district: this.dataForm[0].district,
-          sub_district: this.dataForm[0].sub_district,
-          postal_code: this.dataForm[0].postal_code,
-          email: this.setEmail
+          // address: this.dataForm[0].address,
+          // province: this.dataForm[0].province,
+          // district: this.dataForm[0].district,
+          // sub_district: this.dataForm[0].sub_district,
+          // postal_code: this.dataForm[0].postal_code,
+          // email: this.setEmail
         })
       },
       error => this.errorMessage = <any>error
     )
   }
 
-  // setForm() {
-  //   this.reactiveForm.controls["firstname"].setValue(this.dataEmpForm.firstname)
-  // }
-
-  // getCustomerData(): Subject<Emloyeeinterface[]> {
-  //   return this.customerService.getCustomerLogin();
-  // }
 
   createForm() {
     this.reactiveForm = this.fb.group({
@@ -90,14 +73,12 @@ export class ProfileComponent implements OnInit {
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      province: ['', [Validators.required]],
-      district: ['', [Validators.required]],
-      sub_district: ['', [Validators.required]],
-      postal_code: ['', [Validators.required]],
-      email: [],
-      // firstname: [this.dataForm, [Validators.required]],
-      // lastname: [this.dataForm, [Validators.required]],
+      // address: ['', [Validators.required]],
+      // province: ['', [Validators.required]],
+      // district: ['', [Validators.required]],
+      // sub_district: ['', [Validators.required]],
+      // postal_code: ['', [Validators.required]],
+      // email: [],
 
     })
   }
@@ -130,12 +111,12 @@ export class ProfileComponent implements OnInit {
 
   onClickSubmit() {
 
-    this.submitted = true;
-    if (this.reactiveForm.invalid) {
-      return;
-    } else {
-      this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
-    }
+    // this.submitted = true;
+    // if (this.reactiveForm.invalid) {
+    //   return;
+    // } else {
+    //   this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
+    // }
 
   }
 
