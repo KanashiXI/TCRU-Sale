@@ -22,6 +22,10 @@ export class TaxService {
     return this.http.post<Tax[]>(`${ApiConstants.baseURl}${ApiConstants.edittaxURL}`, data);
   }
 
+  addTax(data) {
+    return this.http.post<Tax[]>(`${ApiConstants.baseURl}${ApiConstants.gettaxURL}`, data);
+  }
+
 
 
 }
