@@ -39,7 +39,8 @@
     <ul class="navbar-nav ml-auto">
 
         <li class="nav-item active">
-            <a class="navbar-brand list" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+            <a class="navbar-brand list" routerLink="profile" *ngIf="loggedIn"><i class="pi pi-id-card"
+                    style="font-size: 1.25rem"></i>&nbsp;&nbsp;บัญชีผู้ใช้</a>
         </li>
         <li class="nav-item active">
             <a class="navbar-brand list" routerLink="showaddress" *ngIf="loggedIn">ข้อมูลจัดส่ง</a>
@@ -49,7 +50,7 @@
         </li>
         <li class="nav-item active">
             <a class="navbar-brand list" routerLink="cart" *ngIf="loggedIn"><i class="pi pi-shopping-cart"
-                    style="font-size: 1.25rem"></i>&nbsp;ตะกร้าสินค้า</a>
+                    style="font-size: 1.25rem"></i>&nbsp;&nbsp;ตะกร้าสินค้า</a>
         </li>
         <li class="nav-item">
             <a class="navbar-brand list" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>

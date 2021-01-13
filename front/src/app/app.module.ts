@@ -62,6 +62,8 @@ import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.comp
 import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 import { DataViewModule } from 'primeng/dataview';
+import { PanelModule } from 'primeng/panel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,6 +129,7 @@ import { DataViewModule } from 'primeng/dataview';
     BreadcrumbModule,
     DividerModule,
     DataViewModule,
+    PanelModule,
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },

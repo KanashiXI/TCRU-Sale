@@ -1,73 +1,41 @@
 <body class="inbd">
 
-    <div class="p-grid">
-        <div class="p-col-1"></div>
-        <div class="p-col-12 p-md-4 p-lg-4">
-            <img src="../../../assets/tcru-image.jpg" class="p-d-block p-mx-auto logo-login">
-        </div>
-        <div class="p-col-1 p-md-1 p-lg-1"></div>
-        <div class="p-col-12 p-md-5 p-lg-5">
-
-
-            <div class="p-d-flex p-jc-center">
-
-                <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
-                    <div class="p-inputgroup">
-                        <div class="p-field">
-                            <label for="name_title">คำนำหน้า</label>
-                            <p>{{dataForm[0].name_title}}</p>
+    <body class="inbd">
+        <br><br>
+        <div class="p-grid">
+            <div class="p-col-1"></div>
+            <div class="p-col-12 p-md-10 p-lg-10">
+                <p-panel>
+                    <p-header>
+                        &nbsp;<b><p><i class="pi pi-id-card" style="font-size: 1.5rem"></i>&nbsp; | &nbsp;ข้อมูลบัญชีผู้ใช้</p></b>
+                    </p-header>
+                    <!-- Content -->
+                    <div class="p-grid">
+                        <div class="p-col-11 p-offset-1">
+                            <b><p>อีเมล์ผู้ใช้</p></b>
+                            <p>{{dataForm[0].email}}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
-                    <div class="p-inputgroup">
-                        <div class="p-field">
-                            <label for="firstname">ชื่อ</label>
-                            <p>{{dataForm[0].firstname}}</p>
+                    <div class="p-grid">
+                        <div class="p-col-11 p-offset-1">
+                            <b><p>ชื่อ - นามสกุล</p></b>
+                            <p>{{dataForm[0].name_title}}&nbsp;&nbsp;{{dataForm[0].firstname}}&nbsp;&nbsp;{{dataForm[0].lastname}}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
-                    <div class="p-inputgroup">
-                        <div class="p-field">
-                            <label for="firstname">นามสกุล</label>
-                            <p>{{dataForm[0].lastname}}</p>
+                    <div class="p-grid">
+                        <div class="p-col-11 p-offset-1">
+                            <b><p>ที่อยู่</p></b>
+                            <p>{{dataForm[0].address}}&nbsp;&nbsp;ตำบล {{dataForm[0].sub_district}}&nbsp;&nbsp;อำเภอ {{dataForm[0].district}}&nbsp;&nbsp;จังหวัด {{dataForm[0].province}}&nbsp;&nbsp;รหัสไปรษณี {{dataForm[0].postal_code}}</p>
                         </div>
                     </div>
-                </div>
-
-
+                    <div class="p-grid">
+                        <div class="p-col-11 p-offset-10 w-100">
+                            <button type="submit" pButton label="แก้ไขบัญชีผู้ใช้" routerLink="/editprofile" class="p-button-raised p-warning"></button>
+                        </div>
+                    </div>
+                </p-panel>
+                <br><br><br><br>
             </div>
-
-
-
-            <div class="p-d-flex p-jc-center">
-                <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
-                    <div class="p-inputgroup">
-                        <div class="p-field">
-                            <label for="firstname">เบอร์โทรศัพท์</label>
-                            <p>{{dataForm[0].telephone}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-col-12 p-md-6 p-lg-6 w-100 form-group">
-                    <button type="submit" pButton label="แก้ไขบัญชีผู้ใช้" routerLink="/editprofile"
-                        class="p-button-raised"></button>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
     </div>
