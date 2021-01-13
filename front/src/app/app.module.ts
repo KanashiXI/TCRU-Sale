@@ -61,6 +61,7 @@ import { EditaddressComponent } from './content/user/editaddress/editaddress.com
 import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.component';
 import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -126,6 +127,7 @@ import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.comp
     FieldsetModule,
     BreadcrumbModule,
     DividerModule,
+    PanelModule,
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
