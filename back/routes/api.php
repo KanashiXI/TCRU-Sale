@@ -26,6 +26,9 @@ Route::group([
     Route::post('edittax','TaxController@editTax');
     Route::get('tax/{userId}', 'TaxController@gettaxById'); //ค้นหาใบกำกับภาษีด้วยไอดีผู้ใช้
     Route::delete('tax/{taxId}', 'TaxController@deleteTax'); //ค้นหาใบกำกับภาษีด้วยไอดีผู้ใช้
+    //เพิ่ม
+    Route::get('onetax/{tax_id}', 'TaxController@getOneTax');
+
 
     //api ที่อยู่จัดส่งสินค้า(dropdown)
     Route::get('province', 'ProvinceController@getprovinces');

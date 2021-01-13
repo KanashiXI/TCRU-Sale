@@ -20,6 +20,7 @@ import { ShowaddressComponent } from './content/user/showaddress/showaddress.com
 import { EditaddressComponent } from './content/user/editaddress/editaddress.component';
 import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.component';
 import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
+import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 
 
 
@@ -100,6 +101,11 @@ const routes: Routes = [
   {
     path: 'inserttax',
     component: InserttaxComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'edittax',
+    component: EdittaxComponent,
     canActivate: [AfterLoginService]
   },
 

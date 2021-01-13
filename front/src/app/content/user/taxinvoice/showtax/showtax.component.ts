@@ -44,6 +44,10 @@ export class ShowtaxComponent implements OnInit {
     this.taxService.deleteTax(data).subscribe();
   }
 
+  onClickEdit(data) {
+    localStorage.setItem("local_tax_id", data);
+  }
+
 
 
 

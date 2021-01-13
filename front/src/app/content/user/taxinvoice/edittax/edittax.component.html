@@ -1,1 +1,151 @@
-<p>edittax works!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+    <form [formGroup]=reactiveForm>
+
+
+        <div class="p-d-flex p-jc-center">
+
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="firstname">ชื่อ (ภาษาไทย)</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="firstname" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="firstname">นามสกุล (ภาษาไทย)</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="lastname" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="p-d-flex p-jc-center">
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="company_name">ชื่อหน่วยงาน</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="company_name" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="address">ที่อยู่</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="address" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="vat_identification_number">หมายเลขใบกำกับภาษี</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="vat_identification_number" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="p-d-flex p-jc-center">
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="province_id">จังหวัด</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="province_id" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="amphure_id">อำเภอ</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="amphure_id" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="district_id">ตำบล</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="district_id" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-d-flex p-jc-center">
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="telephone">เบอร์ไทรศัพท์</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="telephone" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <div class="p-field">
+                        <label for="postal_code">รหัสไปรษณีย์</label>
+                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                            formControlName="postal_code" required aria-describedby="firstname-help" />
+                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-d-flex p-jc-center">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-6 p-lg-6 form-group">
+                    <button type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
+                        class="p-button-raised"></button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

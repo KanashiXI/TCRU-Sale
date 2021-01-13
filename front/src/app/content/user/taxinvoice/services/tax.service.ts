@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiConstants } from 'src/app/shared/constants/ApiConstants';
 import { Tax } from '../interfaces/tax';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,10 @@ export class TaxService {
 
   getTax(data) {
     return this.http.get<Tax[]>(`${ApiConstants.baseURl}${ApiConstants.gettaxURL}/${data}`);
+  }
+
+  getOneTax(data) {
+    return this.http.get<Tax>(`${ApiConstants.baseURl}${ApiConstants.getonetaxURL}/${data}`);
   }
 
   deleteTax(data) {

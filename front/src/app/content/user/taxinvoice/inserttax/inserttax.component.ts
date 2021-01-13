@@ -40,6 +40,9 @@ export class InserttaxComponent implements OnInit {
       district: ['', [Validators.required]],
       company_name: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
+      province_id: ['', [Validators.required]],
+      amphure_id: ['', [Validators.required]],
+      district_id: ['', [Validators.required]],
 
     })
   }
@@ -55,8 +58,9 @@ export class InserttaxComponent implements OnInit {
         this.reactiveForm.patchValue({
           firstname: this.dataForm[0].firstname,
           lastname: this.dataForm[0].lastname,
-          // telephone: this.dataForm[0].telephone,
-          // user_id: this.dataForm[0].id,
+          telephone: this.dataForm[0].telephone,
+          postal_code: this.dataForm[0].postal_code,
+          user_id: this.dataForm[0].id,
         })
       },
       error => this.errorMessage = <any>error
@@ -64,7 +68,7 @@ export class InserttaxComponent implements OnInit {
   }
 
   onClickSubmit() {
-
+    this.taxService.addTax(this.reactiveForm.getRawValue()).subscribe();
   }
 
   get firstname() {
@@ -87,6 +91,16 @@ export class InserttaxComponent implements OnInit {
   }
   get company_name() {
     return this.reactiveForm.get('company_name')
+  }
+
+  get province_id() {
+    return this.reactiveForm.get('province_id')
+  }
+  get amphure_id() {
+    return this.reactiveForm.get('amphure_id')
+  }
+  get district_id() {
+    return this.reactiveForm.get('district_id')
   }
 
 
