@@ -30,6 +30,10 @@ export class ApiConstants {
         return '/api/edittax';
     }
 
+    public static get productURL(): string {
+        return '/api/product';
+    }
+
 
 
 

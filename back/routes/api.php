@@ -14,7 +14,7 @@ Route::group([
     
     //api profile(table'users')
     Route::get('/profile', 'AuthController@userProfile'); 
-    Route::get('/product','ProductController@getproduct'); //get data
+    Route::get('product','ProductController@getproduct'); //get data
     Route::get('register','RegisterController@getcustomer'); //get data
     Route::post('/register','RegisterController@createcustomer'); //create data
     Route::post('editprofile','EditprofileController@editprofile');

@@ -1,8 +1,11 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { SelectItem } from 'primeng/api';
 import { Productinterface } from 'src/app/shared/interface/productinterface';
 import { ProductService } from 'src/app/shared/service/product.service';
+import { Product } from './interfaces/product';
+import { ProductviewService } from './services/productview.service';
 
 interface sortBy {
   sort: string,
@@ -15,33 +18,58 @@ interface sortBy {
 })
 @Injectable()
 export class ProductviewComponent implements OnInit {
-  // products: Product[];
+
 
   activeIndex: number = 0;
-  sortField: string;
+
+
+
+
+
+  errorMessage: String;
+  productList: Product[];
+
+
+
+  products: Product[];
+
+  sortOptions: SelectItem[];
   sortOrder: number;
+  sortField: string;
 
-  productList: Productinterface[] = [];
 
-  constructor(private productService: ProductService) { }
+
+  constructor(private productViewService: ProductviewService) { }
   ngOnInit(): void {
-    this.queryDepartment();
+
+    this.productViewService.getProvince().subscribe(
+      res => {
+        this.productList = res;
+
+      },
+      error => this.errorMessage = <any>error
+    )
+    this.sortOptions = [
+      { label: 'Price High to Low', value: '!price' },
+      { label: 'Price Low to High', value: 'price' }
+    ];
+
+  }
+
+  onSortChange(event) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+      this.sortOrder = -1;
+      this.sortField = value.substring(1, value.length);
+    }
+    else {
+      this.sortOrder = 1;
+      this.sortField = value;
+    }
   }
 
 
-  // productFormGroup = new FormGroup({
-  //   product_name: new FormControl(),
-  //   product_price: new FormControl(),
-  //   retail_price: new FormControl(),
-  // });
 
-  queryDepartment() {
-    // const condition = this.productFormGroup.getRawValue();
-    this.productService.getProducts().subscribe(
-      response => {
-        this.productList = response;
-      }
-    );
-  }
 
 }
