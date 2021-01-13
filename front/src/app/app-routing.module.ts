@@ -1,3 +1,4 @@
+import { EditprofileComponent } from './content/user/editprofile/editprofile.component';
 import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
 import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'editprofile',
+    component: EditprofileComponent,
     canActivate: [AfterLoginService]
   },
   // {

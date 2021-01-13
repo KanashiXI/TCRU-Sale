@@ -49,7 +49,7 @@
         </li>
         <li class="nav-item active">
             <a class="navbar-brand list" routerLink="cart" *ngIf="loggedIn"><i class="pi pi-shopping-cart"
-                    style="font-size: 1.25rem"></i></a>
+                    style="font-size: 1.25rem"></i>&nbsp;ตะกร้าสินค้า</a>
         </li>
         <li class="nav-item">
             <a class="navbar-brand list" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
@@ -61,11 +61,12 @@
             <a class="navbar-brand list" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
         </li>
         <li class="nav-item">
-            <a class="navbar-brand list" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
+            <a class="navbar-brand list" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">
+                <i class="pi pi-sign-out" style="font-size: 1.25rem"></i>&nbsp;&nbsp;ออกจากระบบ</a>
         </li>
-        <li class="nav-item">
-            <a class="navbar-brand list" routerLink="cart" *ngIf="loggedIn"><i class="pi-shopping-cart"></i></a>
-        </li>
+        <!-- <li class="nav-item">
+            <a class="navbar-brand list" routerLink="cart" *ngIf="loggedIn"><i class="pi pi-shopping-cart"></i></a>
+        </li> -->
     </ul>
 
 </nav>
