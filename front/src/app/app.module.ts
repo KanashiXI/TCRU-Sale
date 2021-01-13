@@ -1,3 +1,4 @@
+import { EditprofileComponent } from './content/user/editprofile/editprofile.component';
 import { AddReduceComponent } from './content/shop/productDetail/addReduce/addReduce.component';
 import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
@@ -91,6 +92,7 @@ import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.comp
     ShowtaxComponent,
     InserttaxComponent,
     EdittaxComponent,
+    EditprofileComponent,
   ],
   imports: [
     BrowserModule,
