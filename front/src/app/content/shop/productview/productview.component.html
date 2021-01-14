@@ -40,16 +40,14 @@
 
       <ng-template let-product pTemplate="gridItem">
         <div class="p-col-12 p-md-4">
-          <div class="product-grid-item card">
+          <div class="product-grid-item card pointer">
             <div class="product-grid-item-top">
-              <div>
-                <i class="pi pi-tag product-category-icon"></i>
-                <span class="product-category">{{product.product_name}}</span>
-              </div>
+              <i class="pi pi-tag product-category-icon"></i>
+              <span class="product-category">{{product.product_name}}</span>
             </div>
             <div class="product-grid-item-content">
               <!-- ทำยังไงไห้รูปเล็ก -->
-              <img alt="Card" src="../../../assets/FreshTricoderma.jpg">
+              <img alt="Card" src="../../../assets/FreshTricoderma.jpg" style="width: 60%;">
               <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" /> -->
               <div class="product-name">{{product.product_name}}</div>
               <div class="product-description">{{product.product_name}}</div>
