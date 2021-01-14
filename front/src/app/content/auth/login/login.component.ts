@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   //   password: null
   // };
   public error = null;
-
+  LoginError = false;
 
   // private duplicateEmailDbounce;
   reactiveForm: FormGroup;
@@ -70,6 +70,7 @@ export class LoginComponent implements OnInit {
   }
 
   handleError(error) {
+    this.LoginError = true
     this.error = error.error.error;
   }
 

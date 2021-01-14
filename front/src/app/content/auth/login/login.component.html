@@ -61,7 +61,9 @@
                         รหัสผ่านควรไม่เกิน16ตัว
                     </div>
                 </div>
-
+                <div class="text-danger" *ngIf="LoginError">
+                    ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+                </div>
                 <div class="p-fluid p-formgrid p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 p-offset-8">
                         <small routerLink="/login/resetpassword">ลืมรหัสผ่าน</small>
@@ -81,7 +83,7 @@
         </div>
     </body>
 </form>
-<br><br><br>
+<br><br><br><br>
 
 
 
