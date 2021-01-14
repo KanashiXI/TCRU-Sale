@@ -135,7 +135,7 @@ export class EditprofileComponent implements OnInit {
     // if (this.reactiveForm.invalid) {
     //   return;
     // } else {
-    //   this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
+      this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
     // }
 
   }

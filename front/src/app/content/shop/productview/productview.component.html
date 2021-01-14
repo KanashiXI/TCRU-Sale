@@ -1,6 +1,6 @@
 <body class="inbd">
 
-
+  <!-- upperbar -->
   <div class="card">
     <p-dataView #dv [value]="productList" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
       [sortOrder]="sortOrder" layout="grid">
@@ -16,10 +16,12 @@
           <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
         </div>
       </ng-template>
+
+      <!-- Choose show list Item -->
       <ng-template let-product pTemplate="listItem">
         <div class="p-col-12">
           <div class="product-list-item">
-            <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.product_name" />
+            <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.product_name" /> -->
             <div class="product-list-detail">
               <div class="product-name">{{product.product_name}}</div>
               <div class="product-description">{{product.product_name}}</div>
