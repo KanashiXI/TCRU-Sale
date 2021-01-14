@@ -23,8 +23,10 @@ export class ProfileComponent implements OnInit {
   setEmail: String;
   errorMessage: String;
   test: String;
-
-
+  ShowName_title: String
+  ShowFirstname: String
+  ShowLastname: String
+  ShowTelephone: String
   constructor(
     private customerService: CustomerService,
     private http: HttpClient,
@@ -60,6 +62,10 @@ export class ProfileComponent implements OnInit {
           // postal_code: this.dataForm[0].postal_code,
           // email: this.setEmail
         })
+        this.ShowName_title = this.reactiveForm.get('name_title').value
+        this.ShowFirstname = this.reactiveForm.get('firstname').value
+        this.ShowLastname = this.reactiveForm.get('lastname').value
+        this.ShowTelephone = this.reactiveForm.get('telephone').value
       },
       error => this.errorMessage = <any>error
     )
@@ -73,14 +79,8 @@ export class ProfileComponent implements OnInit {
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
-      // address: ['', [Validators.required]],
-      // province: ['', [Validators.required]],
-      // district: ['', [Validators.required]],
-      // sub_district: ['', [Validators.required]],
-      // postal_code: ['', [Validators.required]],
-      // email: [],
-
     })
+
   }
 
 

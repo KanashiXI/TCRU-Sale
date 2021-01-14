@@ -6,13 +6,18 @@
             <div class="p-col-12 p-md-10 p-lg-10">
                 <p-panel>
                     <p-header>
-                        &nbsp;<b><p><i class="pi pi-user-edit" style="font-size: 1.5rem"></i>&nbsp; | &nbsp;ข้อมูลบัญชีผู้ใช้</p></b>
+                        &nbsp;<b>
+                            <p><i class="pi pi-user-edit" style="font-size: 1.5rem"></i>&nbsp; | &nbsp;ข้อมูลบัญชีผู้ใช้
+                            </p>
+                        </b>
                     </p-header>
                     <!-- Content -->
                     <div class="p-grid">
                         <div class="p-col-11 p-offset-1">
-                            <b><p>อีเมล์ผู้ใช้</p></b>
-                            <p>{{dataForm[0].email}}</p>
+                            <b>
+                                <p>อีเมล์ผู้ใช้</p>
+                            </b>
+                            <p>{{setEmail}}</p>
                         </div>
                     </div>
                     <div class="p-grid">
@@ -21,8 +26,9 @@
                             <div class="p-inputgroup">
                                 <div class="p-field">
                                     <label for="name_title">คำนำหน้า</label>
-                                    <input type="text" id="name_title" pInputText class="p-inputtext-sm form-control w-100"
-                                        formControlName="name_title" required aria-describedby="firstname-help" />
+                                    <input type="text" id="name_title" pInputText
+                                        class="p-inputtext-sm form-control w-100" formControlName="name_title" required
+                                        aria-describedby="firstname-help" />
                                 </div>
                             </div>
                         </div>
@@ -30,8 +36,9 @@
                             <div class="p-inputgroup">
                                 <div class="p-field">
                                     <label for="firstname">ชื่อ (ภาษาไทย)</label>
-                                    <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                                        formControlName="firstname" required aria-describedby="firstname-help" />
+                                    <input type="text" id="password" pInputText
+                                        class="p-inputtext-sm form-control w-100" formControlName="firstname" required
+                                        aria-describedby="firstname-help" />
                                     <a class="text-danger">*</a><small id="firstname-help">โปรดกรอกชื่อเป็นภาษาไทย
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,7 +50,8 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                            <div class="text-danger"
+                                *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                                 <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
                             </div>
                         </div>
@@ -51,8 +59,9 @@
                             <div class="p-inputgroup">
                                 <div class="p-field">
                                     <label for="lastname">นามสกุล (ภาษาไทย)</label>
-                                    <input type="text" id="lastname" pInputText class="p-inputtext-sm form-control w-100"
-                                        formControlName="lastname" required aria-describedby="lastname-help" />
+                                    <input type="text" id="lastname" pInputText
+                                        class="p-inputtext-sm form-control w-100" formControlName="lastname" required
+                                        aria-describedby="lastname-help" />
                                     <a class="text-danger">*</a><small id="lastname-help">โปรดกรอกนามสกุลเป็นภาษาไทย
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -75,37 +84,41 @@
                             <div class="p-inputgroup">
                                 <div class="p-field">
                                     <label for="telephone">เบอร์โทรศัพท์</label>
-                                    <input type="text" id="telephone" pInputText class="p-inputtext-sm form-control fullwidth"
-                                        formControlName="telephone" required aria-describedby="telephone-help" />
-                                        <small id="lastname-help">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        </small>
+                                    <input type="text" id="telephone" pInputText
+                                        class="p-inputtext-sm form-control fullwidth" formControlName="telephone"
+                                        required aria-describedby="telephone-help" />
+                                    <small id="lastname-help">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </small>
                                 </div>
                             </div>
-                            <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                            <div class="text-danger"
+                                *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                                 <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                     <div class="p-grid p-formgrid p-fluid">
                         <div class="p-col-12 p-mb-2 p-lg-4"></div>
                         <div class="p-col-12 p-mb-2 p-lg-2">
-                            <button type="submit" pButton icon="pi pi-times" iconPos="left" label="ยกเลิก" routerLink="/profile" class="p-button-outlined p-button-raised p-mx-auto"></button>
+                            <button type="submit" pButton icon="pi pi-times" iconPos="left" label="ยกเลิก"
+                                routerLink="/profile" class="p-button-outlined p-button-raised p-mx-auto"></button>
                         </div>
                         <div class="p-col-12 p-mb-2 p-lg-2 form-group">
-                            <button type="submit" pButton icon="pi pi-check" iconPos="left" label="บันทึกข้อมูล" routerLink="/profile" class="p-button-raised p-mx-auto" 
-                            [disabled]="reactiveForm.invalid" (click)="onClickSubmit()"></button>
+                            <button type="submit" pButton icon="pi pi-check" iconPos="left" label="บันทึกข้อมูล"
+                                routerLink="/profile" class="p-button-raised p-mx-auto"
+                                [disabled]="reactiveForm.invalid" (click)="onClickSubmit()"></button>
                         </div>
                         <!-- <div class="p-col-12 p-mb-2 p-lg-2">
                             <button type="submit" pButton icon="pi pi-book" iconPos="left" label="ใบกำกับภาษี" routerLink="/showtax" class="p-button-outlined p-button-raised p-mx-auto"></button>
