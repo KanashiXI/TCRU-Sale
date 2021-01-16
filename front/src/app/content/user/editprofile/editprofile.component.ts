@@ -7,6 +7,7 @@ import { MenuItem, SelectItem } from 'primeng/api';
 import { Subject, Subscription } from 'rxjs';
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editprofile',
@@ -34,6 +35,7 @@ export class EditprofileComponent implements OnInit {
     private http: HttpClient,
     private fb: FormBuilder,
     private Jarwis: JarwisService,
+    private router: Router,
 
   ) { }
 
@@ -131,13 +133,14 @@ export class EditprofileComponent implements OnInit {
     return this.reactiveForm.get('postal_code')
   }
 
-  onClickSubmit() {
+  async onClickSubmit() {
 
     // this.submitted = true;
     // if (this.reactiveForm.invalid) {
     //   return;
     // } else {
-    this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
+    await this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
+    await this.router.navigate(['/profile'])
     // }
 
   }
