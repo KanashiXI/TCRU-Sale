@@ -1,154 +1,147 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-
-
+<br><br>
+<body class="inbd">
     <form [formGroup]=reactiveForm>
-
-
-        <div class="p-d-flex p-jc-center">
-
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="firstname">ชื่อ (ภาษาไทย)</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="firstname" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="firstname">ชื่อ (ภาษาไทย)</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="lastname" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="p-d-flex p-jc-center">
-
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="telephone">เบอร์โทรศัพท์</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="telephone" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร-----------------------------------</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="address">ที่อยู่จัดส่งสินค้า</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="address" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร-----------------------------------</small>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-            <label>จังหวัด</label>
-            <select class="form-control" name="province" (change)="getAumph($event)">
-                <option value="">เลือกจังหวัด</option>
-                <option *ngFor="let obj of provinceArr" value="{{obj.id}}">{{obj.name_th}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>อำเภอ</label>
-            <select class="form-control" name="amphure" (change)="getDistr($event)">
-                <option value="">เลือกอำเภอ</option>
-                <option *ngFor="let obj of aumphureArr" value="{{obj.id}}">{{obj.name_th}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>ตำบล</label>
-            <select class="form-control" name="district" (change)="getLast($event)">
-                <option value="">เลือกตำบล</option>
-                <option *ngFor="let obj of districtArr" value="{{obj.id}}">{{obj.name_th}}</option>
-            </select>
-        </div>
-
-        <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-            <div class="p-inputgroup">
-                <div class="p-field">
-                    <label for="postal_code">รหัสไปรษณีย์</label>
-                    <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                        formControlName="postal_code" required aria-describedby="firstname-help" />
-                    <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                        พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร-----------------------------------</small>
-                </div>
-            </div>
-        </div>
-        <br>
         <div class="p-grid">
-            <div class="p-col-12 p-md-6 p-lg-6 form-group">
-                <button routerLink="../showaddress" type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
-                    class="p-button-raised"></button>
+            <div class="p-col-1"></div>
+            <div class="p-col-12 p-md-10 p-lg-10">
+                <p-panel>
+                    <p-header>
+                        &nbsp;<b><p><i class="pi pi-plus-circle" style="font-size: 1.5rem"></i>&nbsp; | &nbsp;เพิ่มข้อมูลจัดส่ง</p></b>
+                    </p-header>
+                    <!-- Content -->
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-2"></div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="firstname"><a class="text-danger">*</a>ชื่อ (ภาษาไทย)</label>
+                            <input type="text" id="firstname" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="firstname" required aria-describedby="firstname-help" />
+                            <a class="text-danger">*</a><small id="firstname-help">โปรดกรอกชื่อเป็นภาษาไทย
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                                <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="firstname"><a class="text-danger">*</a>นามสกุล (ภาษาไทย)</label>
+                            <input type="text" id="lastname" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="lastname" required aria-describedby="lastname-help" />
+                            <a class="text-danger">*</a><small id="lastname-help">โปรดกรอกนามสกุลเป็นภาษาไทย
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                                <div *ngIf="lastname.errors['required']">โปรดกรอกนามสกุล</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-2"></div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="telephone"><a class="text-danger">*</a>เบอร์โทรศัพท์</label>
+                            <input type="text" id="telephone" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="telephone" required aria-describedby="telephone-help" />
+                            <small id="telephone-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+                                <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="address"><a class="text-danger">*</a>ที่อยู่จัดส่งสินค้า</label>
+                            <input type="text" id="address" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="address" required aria-describedby="address-help" />
+                            <small id="address-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                        </div>    
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-2"></div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <div class="form-group">
+                                <a class="text-danger">*</a><label>จังหวัด</label>
+                                <select class="form-control" name="province" (change)="getAumph($event)">
+                                    <option value="">เลือกจังหวัด</option>
+                                    <option *ngFor="let obj of provinceArr" value="{{obj.id}}">{{obj.name_th}}</option>
+                                </select>
+                            </div>
+                        </div>    
+                        <div class="p-col-12 p-md-4 p-field">  
+                            <div class="form-group">
+                                <a class="text-danger">*</a><label>อำเภอ</label>
+                                <select class="form-control" name="amphure" (change)="getDistr($event)">
+                                    <option value="">เลือกอำเภอ</option>
+                                    <option *ngFor="let obj of aumphureArr" value="{{obj.id}}">{{obj.name_th}}</option>
+                                </select>
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-2"></div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <div class="form-group">
+                                <a class="text-danger">*</a><label>ตำบล</label>
+                                <select class="form-control" name="district" (change)="getLast($event)">
+                                    <option value="">เลือกตำบล</option>
+                                    <option *ngFor="let obj of districtArr" value="{{obj.id}}">{{obj.name_th}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <div class="p-field">
+                                <label for="postal_code"><a class="text-danger">*</a>รหัสไปรษณีย์</label>
+                                <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="postal_code" required aria-describedby="firstname-help" />
+                                <small id="password-help">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4"></div>
+                        <div class="p-col-12 p-md-2 p-field">
+                            <button routerLink="../showaddress" type="submit" pButton label="ยกเลิก" class="p-button-outlined p-button-raised"></button>
+                        </div> 
+                        <div class="p-col-12 p-md-2 p-field">
+                            <button routerLink="../showaddress" type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
+                                class="p-button-raised"></button>
+                        </div>    
+                    </div>
+                                   
+                </p-panel>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+</body>
