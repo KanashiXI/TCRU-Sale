@@ -1,162 +1,197 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<div class="container">
-
-
+<br><br>
+<body class="inbd">
     <form [formGroup]=reactiveForm>
-
-
-        <div class="p-d-flex p-jc-center">
-
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="firstname">ชื่อ (ภาษาไทย)</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="firstname" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+        <div class="p-grid">
+            <div class="p-col-1"></div>
+            <div class="p-col-12 p-md-10 p-lg-10">
+                <p-panel>
+                    <p-header>
+                        &nbsp;<b><p><i class="pi pi-plus-circle" style="font-size: 1.5rem"></i>&nbsp; | &nbsp;เพิ่มข้อมูลใบกำกับภาษี</p></b>
+                    </p-header>
+                    <!-- Content -->
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="firstname"><a class="text-danger">*</a>ชื่อ (ภาษาไทย)</label>
+                            <input type="text" id="firstname" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="firstname" required aria-describedby="firstname-help" />
+                            <a class="text-danger">*</a><small id="firstname-help">โปรดกรอกชื่อเป็นภาษาไทย
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                                <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="firstname"><a class="text-danger">*</a>นามสกุล (ภาษาไทย)</label>
+                            <input type="text" id="lastname" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="lastname" required aria-describedby="lastname-help" />
+                            <a class="text-danger">*</a><small id="lastname-help">โปรดกรอกนามสกุลเป็นภาษาไทย
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                                <div *ngIf="lastname.errors['required']">โปรดกรอกนามสกุล</div>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="telephone"><a class="text-danger">*</a>เบอร์โทรศัพท์</label>
+                            <input type="text" id="telephone" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="telephone" required aria-describedby="telephone-help" />
+                            <small id="telephone-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+                                <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="firstname">นามสกุล (ภาษาไทย)</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="lastname" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
 
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="vat_identification_number"><a class="text-danger">*</a>หมายเลขใบกำกับภาษี</label>
+                            <input type="text" id="vat_identification_number" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="vat_identification_number" required aria-describedby="vat_identification_number-help" />
+                            <small id="vat_identification_number-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                            <div class="text-danger" *ngIf="vat_identification_number.invalid && (vat_identification_number.dirty || vat_identification_number.touched)">
+                                <div *ngIf="vat_identification_number.errors['required']">โปรดกรอกหมายเลขกำกับภาษี</div>
+                            </div>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="company_name"><a class="text-danger">*</a>ชื่อหน่วยงาน</label>
+                            <input type="text" id="company_name" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="company_name" required aria-describedby="company_name-help" />
+                            <small id="company_name-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                        </div>
+                        <div class="p-col-12 p-md-4 p-field">
+                            <label for="address"><a class="text-danger">*</a>ที่อยู่</label>
+                            <input type="text" id="address" pInputText class="p-inputtext-sm form-control w-100"
+                                formControlName="address" required aria-describedby="address-help" />
+                            <small id="address-help">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </small>
+                        </div>    
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4 p-field">
+                            <div class="form-group">
+                                <label for="province_id"><a class="text-danger">*</a>จังหวัด</label>
+                                <input type="text" id="province_id" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="province_id" required aria-describedby="province_id-help" />
+                                <small id="province_id-help">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </small>
+                            </div>
+                        </div>    
+                        <div class="p-col-12 p-md-4 p-field">  
+                            <div class="form-group">
+                                <label for="amphure_id"><a class="text-danger">*</a>อำเภอ</label>
+                                <input type="text" id="amphure_id" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="amphure_id" required aria-describedby="amphure_id-help" />
+                                <small id="amphure_id-help">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </small>
+                            </div>
+                        </div> 
+                        <div class="p-col-12 p-md-4 p-field">  
+                            <div class="form-group">
+                                <label for="district_id"><a class="text-danger">*</a>ตำบล</label>
+                                <input type="text" id="district_id" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="district_id" required aria-describedby="district_id-help" />
+                                <small id="district_id-help">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </small>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4 p-field">
+                            <div class="p-field">
+                                <label for="postal_code"><a class="text-danger">*</a>รหัสไปรษณีย์</label>
+                                <input type="text" id="postal_code" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="postal_code" required aria-describedby="postal_code-help" />
+                                <small id="postal_code-help">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-4"></div>
+                        <div class="p-col-12 p-md-2 p-field">
+                            <button routerLink="../showtax" type="submit" pButton label="ยกเลิก" class="p-button-outlined p-button-raised"></button>
+                        </div> 
+                        <div class="p-col-12 p-md-2 p-field">
+                            <button routerLink="../showtax" type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
+                                class="p-button-raised"></button>
+                        </div>    
+                    </div>
+                                   
+                </p-panel>
+            </div>
         </div>
-
-        <div class="p-d-flex p-jc-center">
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="company_name">ชื่อหน่วยงาน</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="company_name" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="address">ที่อยู่</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="address" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="vat_identification_number">หมายเลขใบกำกับภาษี</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="vat_identification_number" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="p-d-flex p-jc-center">
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="province_id">จังหวัด</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="province_id" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="amphure_id">อำเภอ</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="amphure_id" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="district_id">ตำบล</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="district_id" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-d-flex p-jc-center">
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="telephone">เบอร์ไทรศัพท์</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="telephone" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-            <div class="p-col-12 p-md-3 p-sm-6 form-group border-filed p-input-filled">
-                <div class="p-inputgroup">
-                    <div class="p-field">
-                        <label for="postal_code">รหัสไปรษณีย์</label>
-                        <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                            formControlName="postal_code" required aria-describedby="firstname-help" />
-                        <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
-                            พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-d-flex p-jc-center">
-            <div class="p-grid">
-                <div class="p-col-12 p-md-6 p-lg-6 form-group">
-                    <button routerLink="../showtax" type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
-                        class="p-button-raised"></button>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
     </form>
-
-</div>
+</body>
+<br>

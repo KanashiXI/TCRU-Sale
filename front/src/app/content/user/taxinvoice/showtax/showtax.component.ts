@@ -42,6 +42,7 @@ export class ShowtaxComponent implements OnInit {
 
   onClickDelete(data) {
     this.taxService.deleteTax(data).subscribe();
+    this.ngOnInit();
   }
 
   onClickEdit(data) {
