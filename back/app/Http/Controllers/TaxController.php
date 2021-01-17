@@ -19,12 +19,11 @@ class TaxController extends Controller
         $new->lastname = $request->input('lastname');
         
         $new->company_name = $request->input('company_name');
-        $new->company_name = $request->input('company_name');
         $new->address = $request->input('address');
         $new->postal_code = $request->input('postal_code');
         $new->province_id = $request->input('province_id');
         $new->amphure_id = $request->input('amphure_id');
-        $new->district = $request->input('district_id');
+        $new->district_id = $request->input('district_id');
         $new->telephone = $request->input('telephone');
         $new->vat_identification_number = $request->input('vat_identification_number');       
         $new->user_id = $request->input('user_id');       

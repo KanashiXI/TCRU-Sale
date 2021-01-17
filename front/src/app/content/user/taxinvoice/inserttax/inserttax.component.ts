@@ -37,7 +37,6 @@ export class InserttaxComponent implements OnInit {
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
       vat_identification_number: ['', [Validators.required]],
-      district: ['', [Validators.required]],
       company_name: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
       province_id: ['', [Validators.required]],
