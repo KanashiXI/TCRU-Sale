@@ -42,7 +42,7 @@ export class ProductviewComponent implements OnInit {
   constructor(private productViewService: ProductviewService) { }
   ngOnInit(): void {
 
-    this.productViewService.getProvince().subscribe(
+    this.productViewService.getProduct().subscribe(
       res => {
         this.productList = res;
 
@@ -67,6 +67,11 @@ export class ProductviewComponent implements OnInit {
       this.sortOrder = 1;
       this.sortField = value;
     }
+  }
+
+  clickDetail(product_id) {
+
+
   }
 
 

@@ -31,7 +31,8 @@
             </div>
             <div class="product-list-action">
               <span class="product-price">${{product.product_name}}</span>
-              <p-button icon="pi pi-shopping-cart" label="Add to Cart"></p-button>
+              <p-button icon="pi pi-shopping-cart" label="Add to Cart">
+              </p-button>
               <!-- [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" -->
               <!-- <span
                 [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.product_name}}</span> -->
@@ -56,7 +57,8 @@
             </div>
             <div class="product-grid-item-bottom">
               <span class="product-price">${{product.product_name}}</span>
-              <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+              <p-button routerLink="/productview/productdetail/{{product.product_id}}" icon="pi pi-shopping-cart"
+                [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
             </div>
           </div>
         </div>
