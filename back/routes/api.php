@@ -14,7 +14,6 @@ Route::group([
     
     //api profile(table'users')
     Route::get('/profile', 'AuthController@userProfile'); 
-    Route::get('product','ProductController@getproduct'); //get data
     Route::get('register','RegisterController@getcustomer'); //get data
     Route::post('/register','RegisterController@createcustomer'); //create data
     Route::post('editprofile','EditprofileController@editprofile');
@@ -43,6 +42,10 @@ Route::group([
     Route::post('editshipaddress','AddressController@editShippingAddress');
     //เพิ่ม
     Route::get('oneaddress/{address_id}', 'AddressController@getOneShippingAddress');
+
+    //api product
+    Route::get('product','ProductController@getproduct'); //get data
+    Route::get('productdetail{product_id}','ProductController@getOneProduct'); //get data
 });
 
 

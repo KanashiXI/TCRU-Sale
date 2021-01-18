@@ -69,12 +69,4 @@ export class ProductviewComponent implements OnInit {
     }
   }
 
-  clickDetail(product_id) {
-
-
-  }
-
-
-
-
 }

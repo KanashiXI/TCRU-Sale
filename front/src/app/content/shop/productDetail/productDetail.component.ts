@@ -14,7 +14,7 @@ import { Product } from './../productview/interfaces/product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() productItem: Product
+  // @Input() productItem: Product
   items: MenuItem[];
   // productInfo: ProductInfo;
   productInfo: Product;

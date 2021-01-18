@@ -10,4 +10,11 @@ class ProductController extends Controller
         $getall = product::all();
         return response()->json($getall,200); 
     }
+
+    public function getOneProduct($request)
+    {
+        $getall = product::where('product_id', $request)->get();  
+        return response()->json($getall,200); 
+    }
+
 }
