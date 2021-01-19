@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.customerService.getCustomer().subscribe()
+    // this.customerService.getCustomer().subscribe()
     this.createForm();
   }
 
@@ -59,10 +59,7 @@ export class RegisterComponent implements OnInit {
   //   );
   // }
 
-  handleResponse(data) {
-    this.Token.handle(data.access_token);
-    this.router.navigateByUrl('/profile');
-  }
+
 
   // handleError(error) {
   //   this.error = error.error.errors;
@@ -109,6 +106,11 @@ export class RegisterComponent implements OnInit {
       );
     }
 
+  }
+
+  handleResponse(data) {
+    this.Token.handle(data.access_token);
+    // this.router.navigateByUrl('/profile');
   }
 
   get lastname() {

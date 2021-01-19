@@ -10,14 +10,14 @@
           <div class="p-col-6 p-md-5 p-lg-5 p-offset-2">
             <div class="p-grid">
               <div class="p-col-10 form-group">
-                <label class="headTitle">ชื่อสินค้า</label>
+                <label class="headTitle">{{productName}}</label>
               </div>
             </div>
             <div class="p-grid">
               <div class="p-col-10 form-group">
-                <p>รายละเอียด..</p>
-                <p>ราคาต่อหน่วย</p>
-                <p>ปริมาตรบรรจุ</p>
+                <p>ราคา: {{productPrice}}</p>
+                <!-- <p>รายละเอียด..</p> -->
+                <!-- <p>ปริมาตรบรรจุ</p> -->
               </div>
             </div>
             <div class="p-grid">
@@ -30,6 +30,9 @@
             <div class="p-grid">
               <div class="p-col-12 p-md-6 p-lg-6 form-group">
                 <button (click)="handleAddToCart()" pButton type="submit" icon="pi pi-shopping-cart" iconPos="left"
+                  label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button>
+
+                <button (click)="getProductList()" pButton type="submit" icon="pi pi-shopping-cart" iconPos="left"
                   label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button>
               </div>
               <div class="p-col-12 p-md-6 p-lg-6 form-group">
