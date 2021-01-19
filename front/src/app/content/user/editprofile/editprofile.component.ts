@@ -8,7 +8,8 @@ import { Subject, Subscription } from 'rxjs';
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-editprofile',
@@ -96,11 +97,11 @@ export class EditprofileComponent implements OnInit {
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      province: ['', [Validators.required]],
-      district: ['', [Validators.required]],
-      sub_district: ['', [Validators.required]],
-      postal_code: ['', [Validators.required]],
+      // address: ['', [Validators.required]],
+      // province: ['', [Validators.required]],
+      // district: ['', [Validators.required]],
+      // sub_district: ['', [Validators.required]],
+      // postal_code: ['', [Validators.required]],
       email: [],
       // firstname: [this.dataForm, [Validators.required]],
       // lastname: [this.dataForm, [Validators.required]],
@@ -142,11 +143,11 @@ export class EditprofileComponent implements OnInit {
     // } else {
     await this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
     await this.router.navigate(['/profile'])
-    Swal.fire({    
-      icon: 'success',  
-      title: 'บันทึกข้อมูลเรียบร้อย',  
-      showConfirmButton: false,  
-      timer: 2000  
+    Swal.fire({
+      icon: 'success',
+      title: 'บันทึกข้อมูลเรียบร้อย',
+      showConfirmButton: false,
+      timer: 2000
     });
     // }
 

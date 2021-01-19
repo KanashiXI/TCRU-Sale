@@ -45,23 +45,29 @@ export class ShowtaxComponent implements OnInit {
   onClickDelete(data) {
     // this.taxService.deleteTax(data).subscribe();
     // this.ngOnInit();
-    Swal.fire({  
+
+    Swal.fire({
       title: 'คุณต้องการลบข้อมูลนี้ ใช่ หรือ ไม่?',
-      icon: 'warning',  
-      showCancelButton: true,  
-      confirmButtonText: 'ใช่',  
-      cancelButtonText: 'ไม่'  
-    }).then((result) => {  
-      if (result.value) {  
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'ใช่',
+      cancelButtonText: 'ไม่'
+    }).then((result) => {
+      if (result.value) {
+        this.deletaTax(data)
         Swal.fire(
           'ลบข้อมูลเรียบร้อย',
           '',
           'success',
-          this.taxService.deleteTax(data).subscribe(), 
-          this.ngOnInit()  
         )
-      } else if (result.dismiss === Swal.DismissReason.cancel) { }  
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) { }
     })
+  }
+
+  deletaTax(data) {
+    this.taxService.deleteTax(data).subscribe(),
+      this.ngOnInit()
   }
 
   onClickEdit(data) {
