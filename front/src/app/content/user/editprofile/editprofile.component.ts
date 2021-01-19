@@ -8,6 +8,7 @@ import { Subject, Subscription } from 'rxjs';
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-editprofile',
@@ -141,6 +142,12 @@ export class EditprofileComponent implements OnInit {
     // } else {
     await this.Jarwis.editProfile(this.reactiveForm.getRawValue()).subscribe();
     await this.router.navigate(['/profile'])
+    Swal.fire({    
+      icon: 'success',  
+      title: 'บันทึกข้อมูลเรียบร้อย',  
+      showConfirmButton: false,  
+      timer: 2000  
+    });
     // }
 
   }

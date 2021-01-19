@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { Tax } from '../interfaces/tax';
 import { TaxService } from './../services/tax.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-edittax',
@@ -71,6 +72,12 @@ export class EdittaxComponent implements OnInit {
 
   onClickSubmit() {
     this.taxService.editTax(this.reactiveForm.getRawValue()).subscribe();
+    Swal.fire({    
+      icon: 'success',  
+      title: 'บันทึกใบกำกับภาษีเรียบร้อย',  
+      showConfirmButton: false,  
+      timer: 2000  
+    });
   }
 
   get firstname() {

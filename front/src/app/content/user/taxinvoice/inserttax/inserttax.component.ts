@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-inserttax',
@@ -68,6 +68,12 @@ export class InserttaxComponent implements OnInit {
 
   onClickSubmit() {
     this.taxService.addTax(this.reactiveForm.getRawValue()).subscribe();
+    Swal.fire({    
+      icon: 'success',  
+      title: 'บันทึกใบกำกับภาษีเรียบร้อย',  
+      showConfirmButton: false,  
+      timer: 2000  
+    });
   }
 
   get firstname() {
