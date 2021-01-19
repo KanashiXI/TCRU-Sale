@@ -96,7 +96,7 @@ export class EditprofileComponent implements OnInit {
       name_title: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
+      telephone: ['', [Validators.required], Validators.maxLength(10)],
       // address: ['', [Validators.required]],
       // province: ['', [Validators.required]],
       // district: ['', [Validators.required]],
