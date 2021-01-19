@@ -48,6 +48,7 @@ export class ShowaddressComponent implements OnInit {
 
   onClickDelete(data) {
     this.addressService.deleteAddress(data).subscribe();
+    this.ngOnInit();
   }
 
   onClickSubmit(data) {

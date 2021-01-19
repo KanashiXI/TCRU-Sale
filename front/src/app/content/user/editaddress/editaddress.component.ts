@@ -8,6 +8,7 @@ import { Amphure } from '../address/interfaces/amphure';
 import { District } from '../address/interfaces/district';
 import { Province } from '../address/interfaces/province';
 import { AddressService } from '../address/services/address.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-editaddress',
@@ -92,6 +93,12 @@ export class EditaddressComponent implements OnInit {
 
   onClickSubmit() {
     this.addressService.editAddress(this.reactiveForm.getRawValue()).subscribe();
+    Swal.fire({    
+      icon: 'success',  
+      title: 'บันทึกที่อยู่จัดส่งเรียบร้อย',  
+      showConfirmButton: false,  
+      timer: 2000  
+    });
   }
 
   getPro() {

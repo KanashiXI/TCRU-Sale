@@ -9,6 +9,7 @@ import { Amphure } from './interfaces/amphure';
 import { District } from './interfaces/district';
 import { Province } from './interfaces/province';
 import { AddressService } from './services/address.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 /////// insert Address
 @Component({
   selector: 'app-address',
@@ -99,6 +100,12 @@ export class AddressComponent implements OnInit {
     //   return;
     // } else {
     this.addressService.insertAddress(this.reactiveForm.getRawValue()).subscribe();
+    Swal.fire({    
+      icon: 'success',  
+      title: 'บันทึกที่อยู่จัดส่งเรียบร้อย',  
+      showConfirmButton: false,  
+      timer: 2000  
+    });
     // }
 
   }
