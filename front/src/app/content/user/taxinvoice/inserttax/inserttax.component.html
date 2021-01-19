@@ -96,9 +96,9 @@
                         <div class="p-col-12 p-md-4 p-field">
                             <label for="company_name"><a class="text-danger">*</a>ชื่อหน่วยงาน</label>
                             <input type="text" id="company_name" pInputText class="p-inputtext-sm form-control w-100"
-                                formControlName="company_name" 
-                                pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
-                                required aria-describedby="company_name-help" />
+                                formControlName="company_name" required aria-describedby="company_name-help" />
+                                <!-- pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$" -->
+                                
                             <small id="company_name-help">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -110,15 +110,15 @@
                             </small>
                             <div class="text-danger" *ngIf="company_name.invalid && (company_name.dirty || company_name.touched)">
                                 <div *ngIf="company_name.errors['required']">โปรดกรอกชื่อหน่วยงาน</div>
-                                <div *ngIf="company_name.errors.pattern">โปรดกรอกชื่อหน่วยงานเป็นภาษาไทย</div>
+                                <!-- <div *ngIf="company_name.errors.pattern">โปรดกรอกชื่อหน่วยงานเป็นภาษาไทย</div> -->
                             </div>
                         </div>
                         <div class="p-col-12 p-md-4 p-field">
                             <label for="address"><a class="text-danger">*</a>ที่อยู่</label>
                             <input type="text" id="address" pInputText class="p-inputtext-sm form-control w-100"
-                                formControlName="address" 
-                                pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$"
-                                required aria-describedby="address-help" />
+                                formControlName="address" required aria-describedby="address-help" />
+                                <!-- pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$" -->
+                                
                             <small id="address-help">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -130,7 +130,7 @@
                             </small>
                             <div class="text-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
                                 <div *ngIf="address.errors['required']">โปรดกรอกชื่อที่อยู่</div>
-                                <div *ngIf="address.errors.pattern">โปรดกรอกชื่อที่อยู่เป็นภาษาไทย</div>
+                                <!-- <div *ngIf="address.errors.pattern">โปรดกรอกชื่อที่อยู่เป็นภาษาไทย</div> -->
                             </div>
                         </div>    
                     </div>
@@ -140,7 +140,7 @@
                                 <label for="province_id"><a class="text-danger">*</a>จังหวัด</label>
                                 <input type="text" id="province_id" pInputText class="p-inputtext-sm form-control w-100"
                                     formControlName="province_id" 
-                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$"
+                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
                                     required aria-describedby="province_id-help" />
                                 <small id="province_id-help">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -162,7 +162,7 @@
                                 <label for="amphure_id"><a class="text-danger">*</a>อำเภอ</label>
                                 <input type="text" id="amphure_id" pInputText class="p-inputtext-sm form-control w-100"
                                     formControlName="amphure_id" 
-                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$"
+                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
                                     required aria-describedby="amphure_id-help" />
                                 <small id="amphure_id-help">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -184,7 +184,7 @@
                                 <label for="district_id"><a class="text-danger">*</a>ตำบล</label>
                                 <input type="text" id="district_id" pInputText class="p-inputtext-sm form-control w-100"
                                     formControlName="district_id" 
-                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$"
+                                    pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"
                                     required aria-describedby="district_id-help" />
                                 <small id="district_id-help">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

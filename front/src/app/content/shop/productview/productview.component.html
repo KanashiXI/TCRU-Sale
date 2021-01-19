@@ -3,82 +3,76 @@
 <body class="inbd">
 
   <!-- upperbar -->
-  <div class="card">
-    <p-dataView #dv [value]="productList" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
-      [sortOrder]="sortOrder" layout="grid">
+  <div class="grid">
+    <!-- <div class="p-col-1"></div> -->
+    <div class="p-col-10 p-offset-1">
+      <div class="card">
+        <p-dataView #dv [value]="productList" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
+          [sortOrder]="sortOrder" layout="grid">
 
-      <ng-template pTemplate="header">
-        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
-          <!-- <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price"
-            (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown> -->
-          <span class="p-input-icon-left p-mb-2 p-mb-md-0">
-            <i class="pi pi-search"></i>
-            <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
-          </span>
-          <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-        </div>
-      </ng-template>
+          <ng-template pTemplate="header">
+            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+            <!-- <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price"
+              (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown> -->
+              <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                <i class="pi pi-search"></i>
+                <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
+              </span>
+              <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+            </div>
+          </ng-template>
 
       <!-- Choose show list Item -->
-      <ng-template let-product pTemplate="listItem">
-        <div class="p-col-12">
-          <div class="product-list-item">
-            <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.product_name" /> -->
-            <div class="product-list-detail">
-              <div class="product-name">{{product.product_name}}</div>
-              <div class="product-description">{{product.product_name}}</div>
-              <!-- <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating> -->
-              <i class="pi pi-tag product-category-icon"></i><span
-                class="product-category">{{product.product_name}}</span>
+          <ng-template let-product pTemplate="listItem">
+            <div class="p-col-12">
+              <div class="product-list-item">
+                <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.product_name" /> -->
+                <div class="product-list-detail">
+                  <div class="product-name">{{product.product_name}}</div>
+                  <div class="product-description">{{product.product_name}}</div>
+                  <i class="pi pi-tag product-category-icon"></i><span
+                    class="product-category">{{product.product_name}}</span>
+                </div>
+                <div class="product-list-action">
+                  <span class="product-price">${{product.product_name}}</span>
+                  <p-button icon="pi pi-shopping-cart" label="Add to Cart">
+                  </p-button>
+                  <!-- [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" -->
+                  <!-- <span
+                    [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.product_name}}</span> -->
+                </div>
+              </div>
             </div>
-            <div class="product-list-action">
-              <span class="product-price">${{product.product_name}}</span>
-              <p-button icon="pi pi-shopping-cart" label="Add to Cart">
-              </p-button>
-              <!-- [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" -->
-              <!-- <span
-                [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.product_name}}</span> -->
-            </div>
-          </div>
-        </div>
-      </ng-template>
+          </ng-template>
 
-      <ng-template let-product pTemplate="gridItem">
-        <div class="p-col-12 p-md-4">
-          <div class="product-grid-item card pointer">
-            <div class="product-grid-item-top">
-              <i class="pi pi-tag product-category-icon"></i>
-              <span class="product-category">{{product.product_name}}</span>
+          <ng-template let-product pTemplate="gridItem">
+            <div class="p-col-12 p-md-4">
+              <div class="product-grid-item card pointer">
+                <div class="product-grid-item-top">
+                  <i class="pi pi-tag product-category-icon"></i>
+                  <span class="product-category">{{product.product_name}}</span>
+                </div>
+                <div class="product-grid-item-content">
+                  <!-- ทำยังไงไห้รูปเล็ก -->
+                  <img alt="Card" src="../../../assets/FreshTricoderma.jpg" style="width: 60%;">
+                  <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" /> -->
+                  <div class="product-name">{{product.product_name}}</div>
+                  <div class="product-description">{{product.product_name}}</div>
+                </div>
+                <div class="product-grid-item-bottom">
+                  <span class="product-price">${{product.product_name}}</span>
+                  <p-button routerLink="/productview/productdetail/{{product.product_id}}" icon="pi pi-shopping-cart"
+                    [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                </div>
+              </div>
             </div>
-            <div class="product-grid-item-content">
-              <!-- ทำยังไงไห้รูปเล็ก -->
-              <img alt="Card" src="../../../assets/FreshTricoderma.jpg" style="width: 60%;">
-              <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" /> -->
-              <div class="product-name">{{product.product_name}}</div>
-              <div class="product-description">{{product.product_name}}</div>
-            </div>
-            <div class="product-grid-item-bottom">
-              <span class="product-price">${{product.product_name}}</span>
-              <p-button routerLink="/productview/productdetail/{{product.product_id}}" icon="pi pi-shopping-cart"
-                [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </p-dataView>
+          </ng-template>
+        </p-dataView>
 
+      </div>
+    </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

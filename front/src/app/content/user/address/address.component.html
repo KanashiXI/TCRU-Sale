@@ -78,9 +78,9 @@
                         <div class="p-col-12 p-md-4 p-field">
                             <label for="address"><a class="text-danger">*</a>ที่อยู่จัดส่งสินค้า</label>
                             <input type="text" id="address" pInputText class="p-inputtext-sm form-control w-100"
-                                formControlName="address" 
-                                pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$" 
-                                required aria-describedby="address-help" />
+                                formControlName="address" required aria-describedby="address-help" />
+                                <!-- pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ]+$"  -->
+                                
                             <small id="address-help">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,7 +92,7 @@
                             </small>
                             <div class="text-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
                                 <div *ngIf="address.errors['required']">โปรดกรอกที่อยู่</div>
-                                <div *ngIf="telephone.errors.pattern">โปรดกรอกที่อยู่เป็นภาษาไทย</div>
+                                <!-- <div *ngIf="telephone.errors.pattern">โปรดกรอกที่อยู่เป็นภาษาไทย</div> -->
                             </div>
                         </div>    
                     </div>

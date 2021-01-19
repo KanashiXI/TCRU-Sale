@@ -9,7 +9,7 @@ import { uniqueUsernameValidator } from 'src/app/shared/service/unique-username-
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
 
   handleResponse(data) {
     this.Token.handle(data.access_token);
-    this.router.navigateByUrl('/profile');
+    // this.router.navigateByUrl('/profile');
   }
 
   // handleError(error) {
@@ -107,6 +107,12 @@ export class RegisterComponent implements OnInit {
         data => this.handleResponse(data),
         // error => this.handleError(error)
       );
+      Swal.fire({
+        icon: 'success',
+        title: 'บันทึกข้อมูลเรียบร้อย',
+        showConfirmButton: false,
+        timer: 2000
+      });
     }
 
   }
