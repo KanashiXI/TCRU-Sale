@@ -1,5 +1,5 @@
 import { EditprofileComponent } from './content/user/editprofile/editprofile.component';
-import { CartComponent } from './content/dealing/cart/cart.component';
+// import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
 import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
@@ -21,6 +21,7 @@ import { EditaddressComponent } from './content/user/editaddress/editaddress.com
 import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.component';
 import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
+import { CartComponent } from './content/shop/cart/cart/cart.component';
 
 
 
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: '',
     component: ProductviewComponent,
+
+  },
+  {
+    path: 'cartshow',
+    component: CartComponent,
 
   },
   {

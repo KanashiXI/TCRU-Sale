@@ -1,6 +1,6 @@
 import { EditprofileComponent } from './content/user/editprofile/editprofile.component';
 import { AddReduceComponent } from './content/shop/productDetail/addReduce/addReduce.component';
-import { CartComponent } from './content/dealing/cart/cart.component';
+// import { CartComponent } from './content/dealing/cart/cart.component';
 import { ProductDetailComponent } from './content/shop/productDetail/productDetail.component';
 import { ProductInfoComponent } from './content/shop/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/auth/pleaseCheckMail/pleaseCheckMail.component';
@@ -64,6 +64,7 @@ import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.comp
 import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
 import { CartItemComponent } from './content/shop/cart/cart/cart-item/cart-item.component';
+import { CartComponent } from './content/shop/cart/cart/cart.component';
 
 @NgModule({
   declarations: [

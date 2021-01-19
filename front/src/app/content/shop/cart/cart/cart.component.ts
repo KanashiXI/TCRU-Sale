@@ -5,7 +5,7 @@ import { Product } from '../../productview/interfaces/product';
 
 
 @Component({
-  selector: 'app-cart',
+  selector: 'app-cart-show',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
         product_id: product.product_id,
         product_name: product.product_name,
         quantity: 1,
-        product_price: product.retail_price
+        retail_price: product.retail_price
       })
     }
 

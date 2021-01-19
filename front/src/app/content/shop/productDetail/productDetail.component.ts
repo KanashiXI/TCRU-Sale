@@ -44,6 +44,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   handleAddToCart() {
+    console.log(this.productInfo)
     this.msg.sendMsg(this.productInfo)
   }
 
