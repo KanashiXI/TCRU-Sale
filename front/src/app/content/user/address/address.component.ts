@@ -83,11 +83,11 @@ export class AddressComponent implements OnInit {
       province_id: ['', [Validators.required]],
       amphures_id: ['', [Validators.required]],
       districts_id: ['', [Validators.required]],
-      postal_code: ['', [Validators.required]],
+      postal_code: ['', [Validators.required], Validators.maxLength(5)],
       geographic_id: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
+      telephone: ['', [Validators.required], Validators.maxLength(10)],
 
 
     })

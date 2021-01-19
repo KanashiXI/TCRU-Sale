@@ -56,9 +56,9 @@
                         <div class="p-col-12 p-md-2"></div>
                         <div class="p-col-12 p-md-4 p-field">
                             <label for="telephone"><a class="text-danger">*</a>เบอร์โทรศัพท์</label>
-                            <input type="number" id="telephone" pInputText class="p-inputtext-sm form-control w-100"
+                            <input type="text" id="telephone" pInputText class="p-inputtext-sm form-control w-100"
                                 formControlName="telephone" 
-                                pattern="[0-9]+" maxlength="10"
+                                pattern="[0-9]+" minlength="9" maxlength="10"
                                 required aria-describedby="telephone-help" />
                             <small id="telephone-help">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -71,12 +71,15 @@
                             </small>
                             <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
                                 <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
+                                <div *ngIf="telephone.errors.pattern">โปรดกรอกตัวเลข 0-9</div>
                             </div>
                         </div>
                         <div class="p-col-12 p-md-4 p-field">
                             <label for="address"><a class="text-danger">*</a>ที่อยู่จัดส่งสินค้า</label>
                             <input type="text" id="address" pInputText class="p-inputtext-sm form-control w-100"
-                                formControlName="address" required aria-describedby="address-help" />
+                                formControlName="address" 
+                                pattern="^[ๅภถุึคตจขชๆไำพะัีรนยบลฃฟหกดเ้่าสวงผปแอิืทมใฝ๑๒๓๔ู฿๕๖๗๘๙๐ฎฑธํ๊ณฯญฐฅฤฆฏโฌ็๋ษศซฉฮฺ์ฒฬฦ0123456789]+$" 
+                                required aria-describedby="address-help" />
                             <small id="address-help">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -86,6 +89,10 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </small>
+                            <div class="text-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+                                <div *ngIf="address.errors['required']">โปรดกรอกที่อยู่</div>
+                                <div *ngIf="telephone.errors.pattern">โปรดกรอกที่อยู่เป็นภาษาไทย</div>
+                            </div>
                         </div>    
                     </div>
                     <div class="p-grid p-fluid">
@@ -123,9 +130,11 @@
                         <div class="p-col-12 p-md-4 p-field">
                             <div class="p-field">
                                 <label for="postal_code"><a class="text-danger">*</a>รหัสไปรษณีย์</label>
-                                <input type="text" id="password" pInputText class="p-inputtext-sm form-control w-100"
-                                    formControlName="postal_code" required aria-describedby="firstname-help" />
-                                <small id="password-help">
+                                <input type="text" id="postal_code" pInputText class="p-inputtext-sm form-control w-100"
+                                    formControlName="postal_code" 
+                                    pattern="[0-9]+" maxlength="5"
+                                    required aria-describedby="postal_code-help" />
+                                <small id="postal_code-help">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -134,6 +143,10 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </small>
+                                <div class="text-danger" *ngIf="postal_code.invalid && (postal_code.dirty || postal_code.touched)">
+                                    <div *ngIf="postal_code.errors['required']">โปรดกรอกรหัสไปรษณีย์</div>
+                                    <div *ngIf="postal_code.errors.pattern">โปรดกรอกตัวเลข 0-9</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,7 +156,7 @@
                             <button routerLink="../showaddress" type="submit" pButton label="ยกเลิก" class="p-button-outlined p-button-raised"></button>
                         </div> 
                         <div class="p-col-12 p-md-2 p-field">
-                            <button routerLink="../showaddress" type="submit" pButton label="บันทึก" (click)="onClickSubmit()"
+                            <button routerLink="../showaddress" type="submit" pButton label="บันทึก" [disabled]="reactiveForm.invalid" (click)="onClickSubmit()"
                                 class="p-button-raised"></button>
                         </div>    
                     </div>
