@@ -5,6 +5,8 @@ import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { Address } from '../address/interfaces/address';
 import { AddressService } from '../address/services/address.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 
 @Component({
   selector: 'app-showaddress',
@@ -47,8 +49,23 @@ export class ShowaddressComponent implements OnInit {
   }
 
   onClickDelete(data) {
-    this.addressService.deleteAddress(data).subscribe();
-    this.ngOnInit();
+    Swal.fire({  
+      title: 'คุณต้องการลบข้อมูลนี้ ใช่ หรือ ไม่?',
+      icon: 'warning',  
+      showCancelButton: true,  
+      confirmButtonText: 'ใช่',  
+      cancelButtonText: 'ไม่'  
+    }).then((result) => {  
+      if (result.value) {  
+        Swal.fire(
+          'ลบข้อมูลเรียบร้อย',
+          '',
+          'success',
+          this.addressService.deleteAddress(data).subscribe(), 
+          this.ngOnInit()  
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) { }  
+    }) 
   }
 
   onClickSubmit(data) {
@@ -56,6 +73,29 @@ export class ShowaddressComponent implements OnInit {
     localStorage.setItem("address_id", data);
   }
 
-
+  // confirmBox(){  
+  //   Swal.fire({  
+  //     title: 'Are you sure want to remove?',  
+  //     text: 'You will not be able to recover this file!',  
+  //     icon: 'warning',  
+  //     showCancelButton: true,  
+  //     confirmButtonText: 'Yes, delete it!',  
+  //     cancelButtonText: 'No, keep it'  
+  //   }).then((result) => {  
+  //     if (result.value) {  
+  //       Swal.fire(  
+  //         'Deleted!',  
+  //         'Your imaginary file has been deleted.',  
+  //         'success'  
+  //       )  
+  //     } else if (result.dismiss === Swal.DismissReason.cancel) {  
+  //       Swal.fire(  
+  //         'Cancelled',  
+  //         'Your imaginary file is safe :)',  
+  //         'error'  
+  //       )  
+  //     }  
+  //   })  
+  // }
 
 }

@@ -4,6 +4,8 @@ import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { Tax } from '../interfaces/tax';
 import { TaxService } from '../services/tax.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 
 @Component({
   selector: 'app-showtax',
@@ -41,16 +43,28 @@ export class ShowtaxComponent implements OnInit {
   }
 
   onClickDelete(data) {
-    this.taxService.deleteTax(data).subscribe();
-    this.ngOnInit();
+    // this.taxService.deleteTax(data).subscribe();
+    // this.ngOnInit();
+    Swal.fire({  
+      title: 'คุณต้องการลบข้อมูลนี้ ใช่ หรือ ไม่?',
+      icon: 'warning',  
+      showCancelButton: true,  
+      confirmButtonText: 'ใช่',  
+      cancelButtonText: 'ไม่'  
+    }).then((result) => {  
+      if (result.value) {  
+        Swal.fire(
+          'ลบข้อมูลเรียบร้อย',
+          '',
+          'success',
+          this.taxService.deleteTax(data).subscribe(), 
+          this.ngOnInit()  
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) { }  
+    })
   }
 
   onClickEdit(data) {
     localStorage.setItem("local_tax_id", data);
   }
-
-
-
-
-
 }
