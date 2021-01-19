@@ -86,8 +86,8 @@
                                     <label for="telephone"><a class="text-danger">*</a>เบอร์โทรศัพท์</label>
                                     <input type="text" id="telephone" pInputText
                                         class="p-inputtext-sm form-control fullwidth" formControlName="telephone"
-                                        pattern="[0-9]+" minlength="9" maxlength="10"
-                                        required aria-describedby="telephone-help" />
+                                        pattern="[0-9]+" minlength="9" maxlength="10" required
+                                        aria-describedby="telephone-help" />
                                     <small id="telephone-help">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -100,12 +100,13 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </small>
-                                    <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+                                    <div class="text-danger"
+                                        *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
                                         <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -114,7 +115,8 @@
                         <div class="p-col-12 p-mb-2 p-lg-4"></div>
                         <div class="p-col-12 p-mb-2 p-lg-2">
                             <button type="submit" pButton icon="pi pi-times" iconPos="left" label="ยกเลิก"
-                                routerLink="/profile" class="p-button-outlined p-button-raised p-mx-auto"></button>
+                                class="p-button-outlined p-button-raised p-mx-auto"></button>
+                            <!-- routerLink="/profile"  -->
                         </div>
                         <div class="p-col-12 p-mb-2 p-lg-2 form-group">
                             <button type="submit" pButton icon="pi pi-check" iconPos="left" label="บันทึกข้อมูล"

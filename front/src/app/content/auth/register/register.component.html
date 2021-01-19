@@ -1,9 +1,6 @@
 <form [formGroup]=reactiveForm>
 
     <body class="inbd">
-        <!-- <br> -->
-        <!-- <h2 style="text-align: center;">สมัครสมาชิก</h2>
-        <hr style="width: 50%;"> -->
         <div class="p-grid">
             <div class="p-col-1"></div>
             <div class="p-col-12 p-md-4 p-lg-4">
@@ -13,9 +10,6 @@
             <div class="p-col-12 p-md-5 p-lg-5">
                 <div class="p-grid">
                     <div class="p-col-12 p-md-12 p-lg-12 form-group border-filed p-input-filled">
-
-
-                        <!-- <div class="p-inputgroup"> -->
                         <div class="p-field">
                             <label>อีเมล</label>
                             <input type="text" pInputText class="p-inputtext-sm form-control w-100"
@@ -24,14 +18,11 @@
                             <a class="text-danger">*</a>
                             <small id="email-help">กรุณากรอกอีเมลที่สามารถใช้งานได้</small>
                         </div>
-                        <!-- </div> -->
-
                         <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                             <div *ngIf="email.errors.pattern">โปรดกรอกอีเมลล์ให้ถูกต้อง</div>
                             <div *ngIf="email.errors['required']">โปรดกรอกอีเมลล์</div>
                             <div *ngIf="email.errors['uniqueEmail']">อีเมลล์นี้มีผู้ใช้แล้ว</div>
                         </div>
-
                     </div>
                 </div>
                 <div class="p-grid">
@@ -46,7 +37,6 @@
                                     พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>
                         </div>
-                        <!--<a class="text-danger">*</a><small>โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
                         <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
                             <div *ngIf="password.errors.pattern">
                                 รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข

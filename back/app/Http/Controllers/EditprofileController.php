@@ -17,12 +17,12 @@ class EditprofileController extends Controller
         $edit->name_title=$request->name_title;
         $edit->firstname=$request->firstname;
         $edit->lastname=$request->lastname;
-        $edit->address=$request->address;
-        $edit->postal_code=$request->postal_code;
-        $edit->province=$request->province;
-        $edit->district=$request->district;
+        // $edit->address=$request->address;
+        // $edit->postal_code=$request->postal_code;
+        // $edit->province=$request->province;
+        // $edit->district=$request->district;
         $edit->telephone=$request->telephone;
-        $edit->sub_district=$request->sub_district;       
+        // $edit->sub_district=$request->sub_district;       
         $result = $edit->save();
     }
 }

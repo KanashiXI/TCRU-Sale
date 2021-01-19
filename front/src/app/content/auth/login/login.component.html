@@ -1,10 +1,7 @@
-<!-- <form #loginForm=ngForm (ngSubmit)="onSubmit()"> -->
 <form [formGroup]=reactiveForm>
 
     <body class="indb" style="padding-top: 4rem;">
         <br><br>
-        <!-- <h2 style="text-align: center;">เข้าสู่ระบบ</h2> -->
-        <!-- <hr style="width: 50%;"> -->
         <div class="p-grid">
             <div class="p-col-12 p-offset-1">
                 <p class="headTitle"><i class="pi pi-sign-in" style="font-size: 2rem"></i> &nbsp;| &nbsp;เข้าสู่ระบบ</p>
@@ -16,30 +13,17 @@
             </div>
             <div class="p-col-1 p-md-1 p-lg-1"></div>
             <div class="p-col-12 p-md-5 p-lg-5">
-
                 <div class="p-fluid p-grid">
                     <div class="p-col-10 form-group border-filed p-input-filled p-field">
                         <label>ชื่อผู้ใช้</label>
                         <input type="email" name="email" class="form-control w-100" id="inputEmail3" placeholder="Email"
-                            formControlName="email" required>
-                        <!-- <div class="text-danger" *ngIf="form.email.invalid && (form.email.dirty || form.email.touched)">
-                            โปรด email ให้ถูกต้อง
-                        </div> -->
+                            formControlName="email" pattern="[a-zA-Z0-9][A-Za-z0-9._-]+@[a-z0-9.-]*" required>
                     </div>
                 </div>
 
                 <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-                    <div *ngIf="email.errors.pattern">
-                        รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข
-                    </div>
+                    <div *ngIf="email.errors.pattern">โปรดกรอกอีเมลล์ให้ถูกต้อง</div>
                     <div *ngIf="email.errors['required']">โปรดกรอกชื่อผู้ใช้</div>
-
-                    <!-- <div *ngIf="email.errors.minlength">
-                        รหัสผ่านควรมากกว่า6ตัว
-                    </div>
-                    <div *ngIf="email.errors.maxlength">
-                        รหัสผ่านควรไม่เกิน16ตัว
-                    </div> -->
                 </div>
 
 
