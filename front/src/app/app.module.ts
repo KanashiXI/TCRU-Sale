@@ -63,7 +63,7 @@ import { InserttaxComponent } from './content/user/taxinvoice/inserttax/insertta
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
-import { CartItemComponent } from './content/shop/cart/cart/cart-item/cart-item.component';
+
 import { CartComponent } from './content/shop/cart/cart/cart.component';
 
 @NgModule({
@@ -97,7 +97,7 @@ import { CartComponent } from './content/shop/cart/cart/cart.component';
     InserttaxComponent,
     EdittaxComponent,
     EditprofileComponent,
-    CartItemComponent,
+
   ],
   imports: [
     BrowserModule,

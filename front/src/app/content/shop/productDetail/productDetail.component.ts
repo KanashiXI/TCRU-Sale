@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ProductService } from 'src/app/shared/service/product.service';
+import { Product } from '../models/product';
 import { MessengerService } from '../services/messenger.service';
 
 
-import { Product } from './../productview/interfaces/product';
+// import { Product } from './../productview/interfaces/product';
 
 @Component({
   selector: 'app-productDetail',
@@ -19,18 +21,39 @@ export class ProductDetailComponent implements OnInit {
   // productInfo: ProductInfo;
   productInfo: Product;
   counter: number = 0;
+  reactiveForm: FormGroup;
+  productName: string
+  productPrice: string
+  productCapacity: string
+  private cart: Product;
+
+  productList: Product[];
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private msg: MessengerService
-  ) { }
+    private msg: MessengerService,
+    private fb: FormBuilder,
+
+  ) {
+    this.cart = new Product()
+  }
 
   ngOnInit() {
     this.items = [
       { label: 'สินค้าทั้งหมด', url: '/' },
       { label: 'สินค้า...' },
     ];
+    this.createForm();
     this.getProduct();
+
+  }
+  createForm() {
+    this.reactiveForm = this.fb.group({
+      product_name: [''],
+      retail_price: [''],
+
+    })
+
   }
 
   getProduct(): void {
@@ -38,7 +61,12 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getDetail(productId).subscribe(
       prod => {
         this.productInfo = prod;
-        // เก็บคำอธิบายสินค้าสินค้า
+        this.reactiveForm.patchValue({
+          product_name: this.productInfo[0].product_name,
+          retail_price: this.productInfo[0].retail_price,
+        })
+        this.productName = this.reactiveForm.get('product_name').value
+        this.productPrice = this.reactiveForm.get('retail_price').value
       }
     )
   }
@@ -46,6 +74,13 @@ export class ProductDetailComponent implements OnInit {
   handleAddToCart() {
     console.log(this.productInfo)
     this.msg.sendMsg(this.productInfo)
+  }
+
+  getProductList() {
+    this.msg.getMsg().subscribe((prodList: Product[]) => {
+      this.productList = prodList;
+    })
+    // console.log(this.items)
   }
 
 
