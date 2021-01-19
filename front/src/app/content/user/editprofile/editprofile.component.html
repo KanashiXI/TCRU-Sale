@@ -25,7 +25,7 @@
                         <div class="p-col-12 p-md-2 p-mt-3">
                             <div class="p-inputgroup">
                                 <div class="p-field">
-                                    <label for="name_title">คำนำหน้า</label>
+                                    <a class="text-danger">*</a><label for="name_title">คำนำหน้า</label>
                                     <input type="text" id="name_title" pInputText
                                         class="p-inputtext-sm form-control w-100" formControlName="name_title" required
                                         aria-describedby="firstname-help" />
@@ -83,11 +83,12 @@
                         <div class="p-col-12 p-md-2">
                             <div class="p-inputgroup">
                                 <div class="p-field">
-                                    <label for="telephone">เบอร์โทรศัพท์</label>
+                                    <label for="telephone"><a class="text-danger">*</a>เบอร์โทรศัพท์</label>
                                     <input type="text" id="telephone" pInputText
                                         class="p-inputtext-sm form-control fullwidth" formControlName="telephone"
+                                        pattern="[0-9]+" minlength="9" maxlength="10"
                                         required aria-describedby="telephone-help" />
-                                    <small id="lastname-help">
+                                    <small id="telephone-help">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -99,12 +100,12 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </small>
+                                    <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+                                        <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text-danger"
-                                *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
-                                <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
-                            </div>
+                            
                         </div>
 
                     </div>

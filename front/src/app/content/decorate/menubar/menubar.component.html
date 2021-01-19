@@ -49,17 +49,17 @@
             <a class="navbar-brand list" routerLink="showtax" *ngIf="loggedIn">ใบกำกับภาษี</a>
         </li> -->
         <li class="nav-item active">
-            <a class="navbar-brand list" routerLink="cart" *ngIf="loggedIn"><i class="pi pi-shopping-cart"
+            <a class="navbar-brand list" routerLink="/cart" *ngIf="loggedIn"><i class="pi pi-shopping-cart"
                     style="font-size: 1.25rem"></i>&nbsp;&nbsp;ตะกร้าสินค้า</a>
         </li>
         <li class="nav-item">
-            <a class="navbar-brand list" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+            <a class="navbar-brand list" routerLink="/register" *ngIf="!loggedIn">ลงทะเบียน</a>
         </li>
         <!-- <li class="nav-item">
             <a class="navbar-brand list" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
         </li> -->
         <li class="nav-item">
-            <a class="navbar-brand list" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+            <a class="navbar-brand list" routerLink="/login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
         </li>
         <li class="nav-item">
             <a class="navbar-brand list" routerLink="#" (click)="logout($event)" *ngIf="loggedIn">
