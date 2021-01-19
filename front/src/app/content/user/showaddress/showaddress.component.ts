@@ -49,22 +49,39 @@ export class ShowaddressComponent implements OnInit {
   }
 
   onClickDelete(data) {
-    Swal.fire({  
+    // Swal.fire({  
+    //   title: 'คุณต้องการลบข้อมูลนี้ ใช่ หรือ ไม่?',
+    //   icon: 'warning',  
+    //   showCancelButton: true,  
+    //   confirmButtonText: 'ใช่',  
+    //   cancelButtonText: 'ไม่'  
+    // }).then((result) => {  
+    //   if (result.value) {  
+    //     Swal.fire(
+    //       'ลบข้อมูลเรียบร้อย',
+    //       '',
+    //       'success',
+    //       this.addressService.deleteAddress(data).subscribe(), 
+    //       this.ngOnInit()  
+    //     )
+    //   } else if (result.dismiss === Swal.DismissReason.cancel) { }  
+    // })
+    Swal.fire({
       title: 'คุณต้องการลบข้อมูลนี้ ใช่ หรือ ไม่?',
-      icon: 'warning',  
-      showCancelButton: true,  
-      confirmButtonText: 'ใช่',  
-      cancelButtonText: 'ไม่'  
-    }).then((result) => {  
-      if (result.value) {  
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'ใช่',
+      cancelButtonText: 'ไม่'
+    }).then((result) => {
+      if (result.value) {
+        this.addressService.deleteAddress(data).subscribe()
         Swal.fire(
           'ลบข้อมูลเรียบร้อย',
           '',
           'success',
-          this.addressService.deleteAddress(data).subscribe(), 
-          this.ngOnInit()  
         )
-      } else if (result.dismiss === Swal.DismissReason.cancel) { }  
+        this.ngOnInit() 
+      } else if (result.dismiss === Swal.DismissReason.cancel) { }
     }) 
   }
 
