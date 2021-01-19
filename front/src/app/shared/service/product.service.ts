@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Product } from 'src/app/content/shop/productview/interfaces/product';
 import { Productinterface } from '../interface/productinterface';
 
 @Injectable({
@@ -15,6 +16,9 @@ export class ProductService {
     const observable = this.http.get<Productinterface[]>('http://127.0.0.1:8000/api/product/', { params: httpParms })
     return observable;
 
+  }
+  getDetail(id) {
+    return this.http.get<Product>(`'http://127.0.0.1:8000/api/product/'${id}`)
   }
 
 

@@ -71,7 +71,7 @@ const routes: Routes = [
   //   component: ProductviewComponent,
   // },
   {
-    path: 'productview/productdetail',
+    path: 'productview/productdetail/:product_id',
     component: ProductDetailComponent,
   },
   {

@@ -10,7 +10,7 @@ export class ProductviewService {
 
   constructor(private http: HttpClient) { }
 
-  getProvince() {
+  getProduct() {
     return this.http.get<Product[]>(`${ApiConstants.baseURl}${ApiConstants.productURL}`)
 
   }
