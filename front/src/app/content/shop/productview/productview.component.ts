@@ -19,25 +19,16 @@ interface sortBy {
 @Injectable()
 export class ProductviewComponent implements OnInit {
 
-
   activeIndex: number = 0;
-
-
-
-
 
   errorMessage: String;
   productList: Product[];
-
-
 
   products: Product[];
 
   sortOptions: SelectItem[];
   sortOrder: number;
   sortField: string;
-
-
 
   constructor(private productViewService: ProductviewService) { }
   ngOnInit(): void {
