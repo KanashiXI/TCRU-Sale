@@ -1,3 +1,4 @@
+<br>
 <body class="inbd">
   <!-- upperbar -->
   <div class="grid">
@@ -10,260 +11,51 @@
             <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
               <!-- <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price"
               (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown> -->
-              <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+              <!-- <span class="p-input-icon-left p-mb-2 p-mb-md-0">
                 <i class="pi pi-search"></i>
                 <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
-              </span>
+              </span> -->
               <!-- <p-dataViewLayoutOptions></p-dataViewLayoutOptions> -->
             </div>
           </ng-template>
 
           <ng-template let-product pTemplate="gridItem">
-            <div class="p-col-12 p-md-4">
+            <div class="p-col-12 p-md-3">
               <div class="product-grid-item card pointer">
                 <div class="product-grid-item-top">
-                  <i class="pi pi-tag product-category-icon"></i>
-                  <span class="product-category">{{product.product_name}}</span>
+                  <div class="grid">
+                    <div class="p-col-10 p-offset-1">
+                      <i class="pi pi-tag product-category-icon"></i>&nbsp;
+                      <span class="product-category">{{product.product_name}}</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="product-grid-item-content">
-                  <!-- ทำยังไงไห้รูปเล็ก -->
-                  <img alt="Card" src="../../../assets/FreshTricoderma.jpg" style="width: 60%;">
+                  <div class="grid">
+                    <div class="p-col-12 p-d-flex p-jc-center">
+                        <img src="../../../assets/FreshTricoderma.jpg" class="p-shadow-6 p-mr-2" style="width: 50%;">
                   <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" /> -->
-                  <div class="product-name">{{product.product_name}}</div>
-                  <div class="product-description">{{product.product_name}}</div>
+                    </div>
+                  </div>
+                  <div class="grid">
+                    <div class="p-col-12">
+                      <div class="product-name center">{{product.product_name}}</div>
+                      <!-- <div class="product-description center"><small>{{product.product_name}}</small></div> -->
+                    </div>
+                  </div>    
                 </div>
                 <div class="product-grid-item-bottom">
-                  <span class="product-price">${{product.product_name}}</span>
-                  <p-button routerLink="/productview/productdetail/{{product.product_id}}" icon="pi pi-shopping-cart"
-                    [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                  <div class="p-d-flex p-ai-center p-p-3">
+                    <span class="product-price"><strong>$&nbsp;{{product.retail_price}}</strong></span>
+                    <p-button routerLink="/productview/productdetail/{{product.product_id}}" icon="pi pi-shopping-cart"
+                      [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" class="p-ml-auto p-mr-2"></p-button>  
+                  </div>
                 </div>
               </div>
             </div>
           </ng-template>
         </p-dataView>
-
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="p-grid">
-    <div class="p-col-12 p-md-4 p-lg-4 p-offset-8">
-      <div class="p-inputgroup">
-        <input type="text" pInputText placeholder="ค้นหาสินค้า">
-        <button type="button" pButton pRipple label="ค้นหา"></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="p-grid">
-      <div class="p-col-12">
-        <div class="card">
-          <p-tabView [(activeIndex)]="activeIndex" styleClass="center">
-
-            <p-tabPanel header="สินค้าทั้งหมด">
-              <div class="p-grid">
-                <div class="p-col-1"></div>
-                <div class="p-col-12 p-md-2 p-lg-2">
-                  <div class="p-shadow-6">
-                    <p-card routerLink="productview/productdetail" class="pointer">
-                      <p-header class="ui-card-title">
-                        <img alt="Card" src="../../../assets/FreshTricoderma.jpg">
-                      </p-header>
-                      <p style="text-align: left;"><strong>เชื้อราไตรโคเดอมาชนิดสด</strong></p>
-                      <label><small>ขนาด: </small></label> <label style="text-align: right;"><small>100$</small></label>
-                      <p style="text-align: left;"> </p>
-                    </p-card>
-                  </div>
-                </div>
-              </div>
-            </p-tabPanel>
-            <p-tabPanel header="เชื้อราบิวเวอร์เรีย">
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
-            </p-tabPanel>
-            <p-tabPanel header="เชื้อราเมธาไรเซียม">
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-            </p-tabPanel>
-            <p-tabPanel header="เชื้อราไตรโคเดอร์มา">
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-            </p-tabPanel>
-            <p-tabPanel header="สินค้าอื่นๆ">
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-            </p-tabPanel>
-          </p-tabView>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <p-dataView [value]="productList">
-  <p-header>
-    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-  </p-header>
-  <p-footer>
-    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-  </p-footer>
-
-  <ng-template let-product pTemplate="listItem">
-    <div>
-      {{product.product_name}}
-    </div>
-  </ng-template>
-  <ng-template let-product pTemplate="gridItem">
-    <div class="p-col-12 p-md-3">
-      {{product.retail_price}}
-    </div>
-  </ng-template>
-</p-dataView> -->
