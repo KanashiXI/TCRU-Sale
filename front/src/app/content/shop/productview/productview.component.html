@@ -1,9 +1,7 @@
 <body class="inbd">
-
   <!-- upperbar -->
   <div class="grid">
-    <!-- <div class="p-col-1"></div> -->
-    <div class="p-col-10 p-offset-1">
+    <div class="p-col-12">
       <div class="card">
         <p-dataView #dv [value]="productList" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
           [sortOrder]="sortOrder" layout="grid">
@@ -16,30 +14,7 @@
                 <i class="pi pi-search"></i>
                 <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
               </span>
-              <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-            </div>
-          </ng-template>
-
-          <!-- Choose show list Item -->
-          <ng-template let-product pTemplate="listItem">
-            <div class="p-col-12">
-              <div class="product-list-item">
-                <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.product_name" /> -->
-                <div class="product-list-detail">
-                  <div class="product-name">{{product.product_name}}</div>
-                  <div class="product-description">{{product.product_name}}</div>
-                  <i class="pi pi-tag product-category-icon"></i><span
-                    class="product-category">{{product.product_name}}</span>
-                </div>
-                <div class="product-list-action">
-                  <span class="product-price">${{product.product_name}}</span>
-                  <p-button icon="pi pi-shopping-cart" label="Add to Cart">
-                  </p-button>
-                  <!-- [disabled]="product.inventoryStatus === 'OUTOFSTOCK'" -->
-                  <!-- <span
-                    [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.product_name}}</span> -->
-                </div>
-              </div>
+              <!-- <p-dataViewLayoutOptions></p-dataViewLayoutOptions> -->
             </div>
           </ng-template>
 
