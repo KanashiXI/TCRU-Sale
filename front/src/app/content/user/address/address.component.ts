@@ -83,11 +83,11 @@ export class AddressComponent implements OnInit {
       province_id: ['', [Validators.required]],
       amphures_id: ['', [Validators.required]],
       districts_id: ['', [Validators.required]],
-      postal_code: ['', [Validators.required], Validators.maxLength(5)],
+      postal_code: ['', [Validators.required]],
       geographic_id: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      telephone: ['', [Validators.required], Validators.maxLength(10)],
+      telephone: ['',],
 
 
     })
@@ -100,11 +100,11 @@ export class AddressComponent implements OnInit {
     //   return;
     // } else {
     this.addressService.insertAddress(this.reactiveForm.getRawValue()).subscribe();
-    Swal.fire({    
-      icon: 'success',  
-      title: 'บันทึกที่อยู่จัดส่งเรียบร้อย',  
-      showConfirmButton: false,  
-      timer: 2000  
+    Swal.fire({
+      icon: 'success',
+      title: 'บันทึกที่อยู่จัดส่งเรียบร้อย',
+      showConfirmButton: false,
+      timer: 2000
     });
     // }
 

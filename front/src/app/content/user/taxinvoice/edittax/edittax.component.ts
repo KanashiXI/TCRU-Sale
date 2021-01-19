@@ -53,14 +53,13 @@ export class EdittaxComponent implements OnInit {
   }
   createForm() {
     this.reactiveForm = this.fb.group({
-      tax_id: ['', [Validators.required]],
+      tax_id: ['',],
+      user_id: ['',],
       address: ['', [Validators.required]],
-      user_id: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       telephone: ['', [Validators.required]],
       vat_identification_number: ['', [Validators.required]],
-      district: ['', [Validators.required]],
       company_name: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
       province_id: ['', [Validators.required]],
@@ -72,11 +71,11 @@ export class EdittaxComponent implements OnInit {
 
   onClickSubmit() {
     this.taxService.editTax(this.reactiveForm.getRawValue()).subscribe();
-    Swal.fire({    
-      icon: 'success',  
-      title: 'บันทึกใบกำกับภาษีเรียบร้อย',  
-      showConfirmButton: false,  
-      timer: 2000  
+    Swal.fire({
+      icon: 'success',
+      title: 'บันทึกใบกำกับภาษีเรียบร้อย',
+      showConfirmButton: false,
+      timer: 2000
     });
   }
 

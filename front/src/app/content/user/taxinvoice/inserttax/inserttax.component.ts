@@ -31,17 +31,20 @@ export class InserttaxComponent implements OnInit {
 
   createForm() {
     this.reactiveForm = this.fb.group({
+
+      user_id: ['',],
       address: ['', [Validators.required]],
-      user_id: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      telephone: ['', [Validators.required], Validators.minLength(9), Validators.maxLength(10)],
+      telephone: ['', [Validators.required]],
       vat_identification_number: ['', [Validators.required]],
       company_name: ['', [Validators.required]],
-      postal_code: ['', [Validators.required], Validators.maxLength(5)],
+      postal_code: ['', [Validators.required]],
       province_id: ['', [Validators.required]],
       amphure_id: ['', [Validators.required]],
       district_id: ['', [Validators.required]],
+
+
 
     })
   }
@@ -68,11 +71,11 @@ export class InserttaxComponent implements OnInit {
 
   onClickSubmit() {
     this.taxService.addTax(this.reactiveForm.getRawValue()).subscribe();
-    Swal.fire({    
-      icon: 'success',  
-      title: 'บันทึกใบกำกับภาษีเรียบร้อย',  
-      showConfirmButton: false,  
-      timer: 2000  
+    Swal.fire({
+      icon: 'success',
+      title: 'บันทึกใบกำกับภาษีเรียบร้อย',
+      showConfirmButton: false,
+      timer: 2000
     });
   }
 
