@@ -20,8 +20,8 @@
           </ng-template>
 
           <ng-template let-product pTemplate="gridItem">
-            <div class="p-col-12 p-md-3">
-              <div class="product-grid-item card pointer">
+            <div class="p-col-12 p-md-4">
+              <div class="product-grid-item card pointer" routerLink="/productview/productdetail/{{product.product_id}}">
                 <div class="product-grid-item-top">
                   <div class="grid">
                     <div class="p-col-10 p-offset-1">
