@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 // import { MessageService } from 'primeng/api/primeng-api';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -86,6 +86,12 @@ export class LoginComponent implements OnInit {
         this.handleError(error);
       }
     );
+    Swal.fire({
+      icon: 'success',
+      title: 'เข้าสู่ระบบสำเร็จ',
+      showConfirmButton: false,
+      timer: 2000
+    });
   }
 
   handleError(error) {
