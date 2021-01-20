@@ -105,7 +105,7 @@ export class RegisterComponent implements OnInit {
       );
       Swal.fire({
         icon: 'success',
-        title: 'บันทึกข้อมูลเรียบร้อย',
+        title: 'ลงทะเบียนเสร็จสิ้้น',
         showConfirmButton: false,
         timer: 2000
       });
