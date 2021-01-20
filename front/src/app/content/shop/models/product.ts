@@ -1,12 +1,13 @@
 export class Product {
   product_id: number;
   product_name: string;
-  retail_price: string;
+  retail_price: number;
   whale_price: string;
   capacity_id: number;
   product_type_id: number;
   unit_count_id: number;
   weight?: any;
+  product_quantity?: number;
   // id: number;
   // name: string;
   // description: string;

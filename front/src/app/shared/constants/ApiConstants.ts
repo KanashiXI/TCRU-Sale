@@ -37,6 +37,21 @@ export class ApiConstants {
         return '/api/productdetail';
     }
 
+    public static get getcartproductURL(): string {
+        return '/api/cartlist';
+    }
+
+    public static get searchcartproductURL(): string {
+        return '/api/searchproduct';
+    }
+
+    public static get addproductcartURL(): string {
+        return '/api/addproductcart';
+    }
+    public static get addmoreproductcartURL(): string {
+        return '/api/editproduct';
+    }
+
 
 
 
