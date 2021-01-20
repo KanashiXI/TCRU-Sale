@@ -29,15 +29,14 @@
             <br>
             <div class="p-grid">
               <div class="p-col-12 p-md-6 p-lg-6 form-group">
-                <button (click)="handleAddToCart()" pButton type="submit" icon="pi pi-shopping-cart" iconPos="left"
-                  label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button>
-
-                <button (click)="getProductList()" pButton type="submit" icon="pi pi-shopping-cart" iconPos="left"
-                  label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button>
+                <button *ngIf="loggedIn" (click)="handleAddToCart()" pButton type="submit" icon="pi pi-shopping-cart"
+                  iconPos="left" label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button>
+                <!-- <button (click)="getProductList()" pButton type="submit" icon="pi pi-shopping-cart" iconPos="left"
+                  label="เพิ่มลงในตะกร้า" class="p-button-outlined p-button-raised w-100"></button> -->
               </div>
               <div class="p-col-12 p-md-6 p-lg-6 form-group">
-                <button type="submit" pButton label="สั่งซื้อสินค้า" routerLink="" class="p-button-raised w-100">
-                </button>
+                <!-- <button type="submit" pButton label="สั่งซื้อสินค้า" routerLink="" class="p-button-raised w-100">
+                </button> -->
               </div>
             </div>
           </div>

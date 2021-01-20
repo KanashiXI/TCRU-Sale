@@ -46,6 +46,22 @@ Route::group([
     //api product
     Route::get('product','ProductController@getproduct'); //get data
     Route::get('productdetail{product_id}','ProductController@getOneProduct'); //get data
+
+
+    //api cart 
+    // แสดงรายการสินค้าในตะกร้า
+    Route::get('cartlist/{user_id}','CartController@getCartByUserId');
+    // ลบสินค้าในตะกร้า
+    Route::delete('deleteproduct/{product_id}','CartController@deleteCartByProductId');
+    // แก้ไขจำนวนสินค้าในตะกร้า
+    Route::post('editproduct','CartController@editCartByProductId');
+    // ค้นหาสินค้าชิ้นนั้นๆ
+    Route::get('searchproduct/{product_id}','CartController@getProductByProductId');
+    // เพิ่มสินค้า
+    Route::post('addproductcart','CartController@addtoCart');
+
+
+
 });
 
 
