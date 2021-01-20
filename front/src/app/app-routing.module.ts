@@ -23,6 +23,7 @@ import { InserttaxComponent } from './content/user/taxinvoice/inserttax/insertta
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 import { CartComponent } from './content/shop/cart/cart/cart.component';
 import { StockComponent } from './content/management/stock/stock.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 
 
@@ -118,6 +119,10 @@ const routes: Routes = [
     path: 'edittax',
     component: EdittaxComponent,
     canActivate: [AfterLoginService]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 
 ];
