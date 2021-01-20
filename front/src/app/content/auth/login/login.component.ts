@@ -58,6 +58,8 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]],
       // role_id: [2, [Validators.required]],
       role: [],
+      id: [],
+
     })
   }
 
@@ -70,11 +72,16 @@ export class LoginComponent implements OnInit {
           res => {
             this.dataForm = res;
 
+
             this.reactiveForm.patchValue({
               role: this.dataForm[0].role,
+              id: this.dataForm[0].id,
             })
             // this.setRole
+
             const a = this.reactiveForm.get('role').value
+            const uid = this.reactiveForm.get('id').value
+            localStorage.setItem("user_id", uid);
             this.handleResponse(response, a);
           }
         )

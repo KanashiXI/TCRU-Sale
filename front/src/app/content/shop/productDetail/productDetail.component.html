@@ -17,13 +17,16 @@
               <div class="p-col-10 form-group">
                 <p>ราคา: {{productPrice}}</p>
                 <!-- <p>รายละเอียด..</p> -->
-                <!-- <p>ปริมาตรบรรจุ</p> -->
               </div>
             </div>
             <div class="p-grid">
               <div class="p-col-10 p-md-6 p-lg-6">
-                <p>+-จำนวน</p>
-                <app-addReduce></app-addReduce>
+                <p>จำนวน</p>
+                <div class="p-inputgroup" style="height: 2.25rem;">
+                  <button type="button" pButton (click)="decrese()" icon="pi pi-minus"></button>
+                  <input type="text" pInputText [value]="counter">
+                  <button type="button" pButton (click)="increse()" icon="pi pi-plus"></button>
+                </div>
               </div>
             </div>
             <br>

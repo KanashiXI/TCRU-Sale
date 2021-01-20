@@ -7,4 +7,5 @@ export interface Product {
     product_type_id: number;
     unit_count_id: number;
     weight?: any;
+    product_quantity?: number;
 }

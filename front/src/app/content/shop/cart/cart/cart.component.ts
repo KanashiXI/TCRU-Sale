@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessengerService } from './../../services/messenger.service';
 import { Subject } from 'rxjs';
 import { Product } from '../../productview/interfaces/product';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -11,14 +12,70 @@ import { Product } from '../../productview/interfaces/product';
 })
 export class CartComponent implements OnInit {
 
+  counter: number = 0;
+
   cartItem = []
   cartTotal = 0
-  constructor(private msg: MessengerService) { }
+  productInCart: Product[]
+  constructor(
+    private msg: MessengerService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    const requestData = {
+      ...Subject,
+      customerUsername: localStorage.getItem('user_id'),
+    }
+    //แสดงรายการสินค้าในตะกร้าสินค้า
+    this.queryCartProduct(requestData.customerUsername)
+
+
+
+
+
     this.msg.getMsg().subscribe((product: Product) => {
       this.addProductToCart(product)
     })
+  }
+
+  decrese() {
+    console.log('hey decrese');
+    if (this.counter - 1 > 0) {
+      this.counter--;
+    }
+
+  }
+
+  increse() {
+    if (this.counter + 1 < 100) {
+      this.counter++;
+    }
+
+  }
+
+  addOne(productInOrder) {
+    // productInOrder.count++;
+    // CartComponent.validateCount(productInOrder);
+    // if (this.currentUser) { this.updateTerms.next(productInOrder); }
+  }
+
+  minusOne(productInOrder) {
+    // productInOrder.count--;
+    // CartComponent.validateCount(productInOrder);
+    // if (this.currentUser) { this.updateTerms.next(productInOrder); }
+  }
+
+  onChange(productInOrder) {
+    // CartComponent.validateCount(productInOrder);
+    // if (this.currentUser) { this.updateTerms.next(productInOrder); }
+  }
+
+  queryCartProduct(user_id) {
+    this.cartService.getCartItemList(user_id).subscribe(res => {
+      this.productInCart = res;
+    }
+    )
   }
 
   addProductToCart(product: Product) {
