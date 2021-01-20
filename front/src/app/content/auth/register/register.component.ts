@@ -10,6 +10,7 @@ import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 
 @Component({
   selector: 'app-register',
@@ -23,8 +24,9 @@ export class RegisterComponent implements OnInit {
 
   // private duplicateEmailDbounce;
   reactiveForm: FormGroup;
+  roleForm: FormGroup;
   submitted = false;
-
+  dataForm: Emloyeeinterface;
   constructor(
     private customerService: CustomerService,
     private http: HttpClient,
@@ -84,10 +86,16 @@ export class RegisterComponent implements OnInit {
       // emailConfirm: ['', [Validators.required, compareValidator('email')], uniqueEmailValidator(this.customerService)],
       password: ['', [Validators.required]],
       password_confirmation: ['', [Validators.required, compareValidator('password'), Validators.maxLength(16)]],
-
+      // role: [1],
       // role_id: [2, [Validators.required]],
       // telephone: ['', [Validators.required]],
     })
+    this.roleForm = this.fb.group({
+      role: [1],
+      id: []
+    })
+
+
   }
 
 
@@ -99,10 +107,12 @@ export class RegisterComponent implements OnInit {
     } else {
       // const customer = this.reactiveForm.getRawValue();
       // this.customerService.postCustomer(customer).subscribe();
+
       this.Jarwis.signup(this.reactiveForm.getRawValue()).subscribe(
         data => this.handleResponse(data),
         // error => this.handleError(error)
       );
+
       Swal.fire({
         icon: 'success',
         title: 'ลงทะเบียนเสร็จสิ้้น',
@@ -115,7 +125,18 @@ export class RegisterComponent implements OnInit {
 
   handleResponse(data) {
     this.Token.handle(data.access_token);
-    // this.router.navigateByUrl('/profile');
+
+
+    this.customerService.getCustomerProfileByEmail(this.reactiveForm.get('email').value).subscribe(
+      res => {
+        this.dataForm = res;
+        this.roleForm.patchValue({
+          id: this.dataForm[0].id,
+        })
+      }
+    )
+    this.Jarwis.setRole(this.roleForm.getRawValue()).subscribe()
+
   }
 
   get lastname() {

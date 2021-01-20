@@ -28,6 +28,10 @@ export class JarwisService {
     return this.http.post(`${this.baseUrl}/api/editprofile`, data)
   }
 
+  setRole(data) {
+    return this.http.post(`${this.baseUrl}/api/setrole`, data)
+  }
+
   // profileUser(data): Observable<any> {
   //   return this.http.get('http://127.0.0.1:8000/api/profile');
   // }

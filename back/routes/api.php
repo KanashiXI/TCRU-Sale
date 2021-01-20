@@ -16,6 +16,9 @@ Route::group([
     Route::get('/profile', 'AuthController@userProfile'); 
     Route::get('register','RegisterController@getcustomer'); //get data
     Route::post('/register','RegisterController@createcustomer'); //create data
+    Route::post('setrole','RegisterController@setRoleUser');
+
+
     Route::post('editprofile','EditprofileController@editprofile');
     Route::get('emailvailate/{email}','RegisterController@getCustomerByEmail'); 
     Route::get('/register/{username}','RegisterController@getCustomerByUsername');    

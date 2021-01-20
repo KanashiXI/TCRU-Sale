@@ -108,10 +108,10 @@ export class LoginComponent implements OnInit {
 
   handleResponse(data, role) {
     console.log(role)
-    if (role == '1') {
+    if (role != '1') {
       this.Token.handle(data.access_token);
       this.Auth.changeAuthStatus(true);
-      this.router.navigateByUrl('');
+      this.router.navigateByUrl('login');
     } else {
       this.Token.handle(data.access_token);
       this.Auth.changeAuthStatus(true);

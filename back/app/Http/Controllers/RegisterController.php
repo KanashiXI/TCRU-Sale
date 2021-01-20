@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\customer;
 use App\users;
+use App\User;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,13 @@ class RegisterController extends Controller
         $new->save();
 
         return response()->json(['newitem'=>$new],201);
+    }
+    public function setRoleUser(Request $request, User $users)
+    {
+        $edit = User::where('id', $request->id)->first();
+        $edit->role= 1 ;
+        $result = $edit->save();
+
     }
     
 }
