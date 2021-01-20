@@ -15,4 +15,5 @@ export interface Emloyeeinterface {
     province?: string;
     district?: string;
     sub_district?: string;
+    role?: string
 }

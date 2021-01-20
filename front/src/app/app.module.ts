@@ -65,6 +65,7 @@ import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
 
 import { CartComponent } from './content/shop/cart/cart/cart.component';
+import { StockComponent } from './content/management/stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { CartComponent } from './content/shop/cart/cart/cart.component';
     InserttaxComponent,
     EdittaxComponent,
     EditprofileComponent,
+    StockComponent,
 
   ],
   imports: [

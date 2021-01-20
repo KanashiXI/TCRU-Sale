@@ -22,6 +22,7 @@ import { ShowtaxComponent } from './content/user/taxinvoice/showtax/showtax.comp
 import { InserttaxComponent } from './content/user/taxinvoice/inserttax/inserttax.component';
 import { EdittaxComponent } from './content/user/taxinvoice/edittax/edittax.component';
 import { CartComponent } from './content/shop/cart/cart/cart.component';
+import { StockComponent } from './content/management/stock/stock.component';
 
 
 
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'stock',
+    component: StockComponent,
   },
   {
     path: 'address',

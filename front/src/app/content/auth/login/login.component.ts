@@ -9,6 +9,7 @@ import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/service/auth.service';
+import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 // import { MessageService } from 'primeng/api/primeng-api';
 
 
@@ -30,6 +31,8 @@ export class LoginComponent implements OnInit {
   reactiveForm: FormGroup;
   submitted = false;
   isUserNull = false;
+  dataForm: Emloyeeinterface;
+  setRole: string;
   constructor(
     private customerService: CustomerService,
     private http: HttpClient,
@@ -54,14 +57,30 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       // role_id: [2, [Validators.required]],
+      role: [],
     })
   }
 
   onClickSubmit() {
     this.Jarwis.login(this.reactiveForm.getRawValue()).subscribe(
       (response: Response) => {
-        this.handleResponse(response);
+
         localStorage.setItem("customerUsername", this.reactiveForm.get('email').value);
+        this.customerService.getCustomerProfileByEmail(this.reactiveForm.get('email').value).subscribe(
+          res => {
+            this.dataForm = res;
+
+            this.reactiveForm.patchValue({
+              role: this.dataForm[0].role,
+            })
+            // this.setRole
+            const a = this.reactiveForm.get('role').value
+            this.handleResponse(response, a);
+          }
+        )
+
+
+
       },
       error => {
         this.handleError(error);
@@ -74,10 +93,20 @@ export class LoginComponent implements OnInit {
     this.error = error.error.error;
   }
 
-  handleResponse(data) {
-    this.Token.handle(data.access_token);
-    this.Auth.changeAuthStatus(true);
-    this.router.navigateByUrl('');
+  handleResponse(data, role) {
+    console.log(role)
+    if (role == '1') {
+      this.Token.handle(data.access_token);
+      this.Auth.changeAuthStatus(true);
+      this.router.navigateByUrl('');
+    } else {
+      this.Token.handle(data.access_token);
+      this.Auth.changeAuthStatus(true);
+      this.router.navigateByUrl('stock');
+    }
+
+
+    // this.router.navigate(['/profile'])
     // localStorage.setItem("customerUsername","");
   }
 
